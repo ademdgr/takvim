@@ -1,0 +1,15 @@
+# BASİT BİR ERKEN DURDURMA İŞLEMİ
+es = EarlyStopping(monitor='val_loss', mode='auto', verbose=1)
+# ERKEN DURDURMA SONUCU EN İYİ BAŞARIMIN MODEL BAŞARIMI OLARAK KAYDEDİLMESİ
+mc = ModelCheckpoint('best_model.h5', monitor='val_acc', mode='max', verbose=1, save_best_only=True)
+# Modeli erken durdurma ve en iyi başarımı kaydetme callback parametrelerini ekleyerek tekrar eğitme
+history = model.fit(trainX, trainy, validation_data=(testX, testy), epochs=4000, verbose=0, callbacks=[es, mc])
+# Test ve Eğitim başarılarının hesaplanması
+_, train_acc = model.evaluate(trainX, trainy, verbose=0)
+_, test_acc = model.evaluate(testX, testy, verbose=0)
+print('Train: %.3f, Test: %.3f' % (train_acc, test_acc))
+# Eğitim ve test sonuçlarının ekrana yazılması ve çizdirilmesi
+pyplot.plot(history.history['loss'], label='train')
+pyplot.plot(history.history['val_loss'], label='test')
+pyplot.legend()
+pyplot.show()
