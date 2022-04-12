@@ -1,0 +1,420 @@
+Yapay Zeka Mühendisliği : Tobb hacettepe itü ve bahçeşehirde var bir de kıbrısda var
+
+*** Tobb YZ dersleri ***
+Bilgisayar Programlama  
+Veri Bilimine Giriş	
+Veri Yapıları	
+Kombinatorik ve Çizge Kuramı	
+Yöneylem Araştırmaları
+Sistem Programlama  
+Algoritma Analizi
+Yapay Zeka
+Veritabanı Sistemleri	
+Yapay Öğrenme
+Derin Öğrenme	
+Yenilikçi Yapay Zeka Uygulamaları	
+Veri Madenciliği
+
+Yapay Zeka Alanı Seçmeli Ders Listesi ***
+	Sinyaller ve Sistemler	
+	Görüntü İşleme	
+	Yazılım Mühendisliği	
+	Robotiğe Giriş	
+	Doğal Dil İşleme	
+	Bilgisayarla Görü	
+  Bilgi Erişim Sistemleri	
+	Sezgisel Arama Metotları	
+	Sosyal Ağlar	
+
+yan dersler : ingilizce / matemetik / finansa giriş / mikroekonomi teorisi 
+/	Girişimcilik ve Liderlik /Bilgisayar Bilimleri için Ayrık Matematik /	Doğrusal Cebir ve Uygulamaları	
+Eleştirel Düşünce	/ Psikolojiye Giriş / Diferansiyel Denklemler / Olasılık Teorisi 
+/ Olasılık ve İstatistik / Ortak Eğitim / 
+
+Finans Alanı Seçmeli Ders Listesi ***
+	Makroekonomi Teorisi 
+  Finansal Piyasalar ve Kurumlar	
+	Finansal Modelleme	
+	Rassal Modeller
+	Ekonometri I	
+	Risk Yönetimi	
+	Uygulamalı Ekonometri: Zaman Serisi Analizi	
+	Yatırım Analizi ve Portföy Yönetimi	
+	Yazılım Mühendisliği	
+	Sezgisel Arama Metotları	
+	Hesaplamalı Finans**	
+	Sosyal Ağlar
+	Finansta Yapay Zeka Uygulamaları
+  
+  
+  
+YAP 101	Veri Bilimine Giriş	Önkoşul: -	3 Kredi
+Bu dersin amacı veri bilimine dair temel konuları anlatıp sizi ileri konulara hazırlamaktır. Derste öncelikle nedensellik ve deneysel araştırma kavramları anlatılacak. Sonrasında Python programlama, DataFrame kütüphanesi ve görselleştirme konuları ile veri analizine dair temel programlama yetenekleri kazandırmayı hedeflemektedir. Ardından rastgelelik, örneklem alma, hipotezleri test etme, iki örneklemi karşılaştırma, önkestirim ve ortalamanın önemi konuları işlenecektir. Dersin en sonunda ise makine öğrenmesi konularına çok yüzeysel bir giriş yapılıp tahmin etme, sınıflandırma ve Bayes Teoremi konuları görülecektir.
+
+YAP 191	Eleştirisel Düşünce	Önkoşul: -	3 Kredi
+Sen kimsin, eleştirel düşünme nedir, gerçek nedir, bilmek ne demektir, fikirleriniz ne kadar iyi, temel sorun “benimki daha iyi”, değişime direnç, uygunluk, durum kurtarma, basmakalıp, aşırı basitleştirme, aceleci sonuçlar, dayanaksız varsayımlar, mantıksal yanlışlar, problemlerin birleşimi, kendini tanıma, gözlemci olmak, sorunları açıklığa kavuşturmak, araştırma yapmak, kanıtları yorumlamak, bakış açılarını analiz etmek, yargılarda bulunmak, önyargılar, safsatalar, bilişsel sapmalar
+
+YAP 441	Yapay Zeka	Önkoşul: BİL 212, BİL 345	3 kredi
+Akıllı aracılar, problem çözümünde arama yöntemleri, bilgilendirilmiş ve bilgilendirilmemiş arama yöntemleri, keşif yöntemleri, kısıt sağlama problemleri, oyun oynama, bilgi ve akıl yürütme, birinci derecede mantık, bilgi gösterimi, öğrenme.
+
+YAP 442  (BİL 442)	Derin Öğrenme	Önkoşul: YAP 470	3 kredi
+Derin Öğrenme Temelleri, derin yapay sinir ağları, derin öğrenme eğitim modelleri, evrişimsel sinir ağları (CNN), Otomatik Kodlayıcı (AE), tekrarlayan sinir ağları (RNN), Üretici Çekişmeli Ağlar (GAN), Dönüştürücü Ağlar, Derin takviyeli öğrenme, Derin Öğrenme Uygulamaları
+
+YAP 470  	Yapay Öğrenme	Önkoşul: BİL 211, BİL 245	3 kredi
+Giriş ve tanımlar, sınıflandırma/regresyon problemi, denetimli öğrenme, doğrusal regresyon, en küçük kareler hata toplamı, lojistik regresyon, perceptron, sapma-değişkenlik (bias-variance), düzenleme, aşırı öğrenme, öznitelik seçimi, çıkarımı, yapay sinir ağları, karar ağaçları, destek vektör makineleri, topluluk ağları, denetimsiz öğrenme
+
+YAP 495	Yenilikçi Yapay Zeka Uygulamaları	Önkoşul: YAP 470	3 kredi
+Öğrenciler yenilikçi yapay zeka uygulamaları, başarı hikayeleri, girişimcilik fırsatları, gelecekte beklenen eğilimler konularında alanında uzman konuk konuşmacılarca bilgilendirilecek ve motive edilecektir. Öğrencilerden bir sonraki dönem yapacakları yapay zeka ve veri bilimi ile ilgili bitirme projesini tanımlamaları ve ilk aşamalarını (ihtiyaç analizi, kullanılacak teknolojilerin seçimi, kullanılacak veri setleri, araçlar, malzemeler vb. temini, genel sistem mimarisi, vb.) tamamlaması hedeflenmektedir.
+
+YAP 496	Bitirme Projesi	Önkoşul: YAP 495	3 kredi
+Bu derste, öğrenciler bir yapay zeka veya veri bilimi projesini yürütürler. Bu proje kapsamında, bir  yapay zeka probleminin çözümü için, literatür taraması, problem formülasyonu, veri ve alan araştırması ve kapsamlı bir tasarım yapılır. Tasarımın sonucu, dönem sonunda, proje yöneticisine istenilen biçimde sunulur. Giriş, Planlama, Modelleme, Sistem İnşası, Yapay zeka uygulamasının geliştirilmesi, Son demo.
+
+ 
+
+Seçmeli Dersler
+ 
+
+YAP 471	Hesaplamalı Finans	Önkoşul: İKT 213, BİL 345	3 Kredi
+Bu dersin amacı sizi türev fiyatlandırma ilkeleri ve finansta stokastik problemleri çözmede kullanılan sayısal yöntemler ile donatmaktır. Ders size finansın temel nümerik teknikleri latis, sonlu fark, Monte-Carlo simülasyonu ve yoğunluk dönüşüm yöntemlerini öğretecek. Black-Scholes opsiyon fiyatlama çerçevesi ile sizi temellendikten sonra, kurs nümerik metotları, basit ve egzotik opsiyonlar, reel opsiyonlar, kredi riskli ve risksiz tahvil fiyatlaması gibi türev ürünler ve tahvil fiyatlaması problemlerini uygulayacaktır.
+
+YAP 472	Finansal Modelleme	Önkoşul: İKT 213, BİL 345	3 Kredi
+Bu dersin amacı, sizi kantitatif modeller ve finansta büyük veri analitiği ile donatmaktır.  Bu ders size regresyon analizi; sağlamlık analizi; Monte Carlo simülasyonu; doğrusal, tam sayı ve doğrusal olmayan optimizasyon; ve latis yöntemleri gibi finansal modelleme çerçeveleri, araçları ve metodoloji kavramlarını öğretir. Ders bu kavramları, klasik finans problemleri ortalama-varyans portföy seçimi; tahvil portföy yönetimi; vade yapısı tahmini; sermaye bütçelemesi; risk ölçümü; indirgenmiş nakit akışı risk analizi; Avrupa ve Amerikan opsiyon fiyatlaması problemlerine ve büyük veri meseleleri duyarlılık analizi; yüksek frekanslı ticaret; büyük veri ve fin-tek şirketleri konularına uygular.
+
+YAP 490	Araştırma Projesi I	Önkoşul: YAP 441, YAP 470	3 Kredi
+Bu ders kapsamında danışman akademisyenle birlikte yapay zeka / yapay öğrenme ile ilgili teorik veya uygulamalı araştırmalar yapılması amaçlanmaktadır. Dönem sonunda yapılan araştırmalar ve çalışmalarla ilgili bir makale, bildiri oluşturulması hedeflenmektedir. 
+
+YAP 491	Araştırma Projesi II	Önkoşul: YAP 490	3 Kredi
+Bu ders kapsamında danışman akademisyenle birlikte yapay zeka / yapay öğrenme ile ilgili teorik veya uygulamalı araştırmalar yapılması amaçlanmaktadır. Genel olarak YAP 490 kapsamında yapılan çalışmaların bir devamı niteliğinde değerlendirilecek olup dönem sonunda yapılan araştırmalar ve çalışmalarla ilgili endeksli bir dergide makale oluşturulması hedeflenmektedir. 
+
+
+*** BAU YZ DERSLERİ :***
+
+YAN DERSLER : matematik / Ayrık Matematik / fizik / İletişim Becerileri ve Akademik Raporlama / Lineer Cebir 
+/ Olasılık ve İstatistik / Mühendisler için İstatistik / Diferansiyel denklemler / Mühendisliğin Teknik Olmayan Yönleri / 
+
+
+Bilgisayar Programlama I (Python)(C++)
+Bilgisayar Sistemleri
+Veri Yapıları ve Algoritmalar
+Yapay Zekanın İlkeleri
+Veri Bilimine Giriş
+Optimizasyona Giriş
+Bilgisayarlar ve Etik
+Makine öğrenme
+Algoritmaların Analizi
+Veritabanı Sistemleri ve Bulut Bilişim
+Gömülü Sistem Programlama
+Biçimsel Diller ve Otomata Teorisi
+Derin Öğrenme
+
+
+Yüksek lisanas dersleri : 
+Yapay Zekanın İlkeleri
+Yapay Zeka Optimizasyonu 
+
+
+
+*** HACETTEPE YZ  Dersleri ***
+PROGRAMLAMAYA GIRIŞ 								
+TEMEL BİLGİ ve İLETİŞİM TEKN. KULLANIMI																				
+YAPAY ZEKANIN İLKELERİ										
+VERİ YAPILARI												
+YAZILIM LABORATUVARI 													
+BİLGİSAYARLAR ve ETİK	
+VERİ BİLİMİNİN TEMELLERİ	
+VERİ BİLİMİ LABORATUVARI													
+ALGORİTMALAR																						
+BİLGİSAYAR SİSTEMLERİ												
+YAPAY ÖĞRENMENİN TEMELLERİ	
+	
+AIN312 BİÇİMSEL DİLLER ve ÖZDEVİNİRLER KURAMI	
+AIN411 BİYOENFORMATİĞE GİRİŞ	
+AIN412 MEDİKAL GÖRÜNTÜ İŞLEMEYE GİRİŞ	
+AIN413 SAĞLIK ALANINDA YAPAY ÖĞRENME	
+AIN414 MEDİKAL GÖRÜNTÜ ANALİZİ LABORATUVARI	
+AIN420 DERİN ÖĞRENMEYE GİRİŞ	
+AIN421 BULANIK MANTIK	
+AIN422 DERİN ÖĞRENME LABORATUVARI
+AIN423 VERİ YOĞUNLUKLU UYGULAMALAR	
+AIN424 PEKİŞTİRMELİ DERİN ÖĞRENMEYE GİRİŞ
+AIN425 VERİ YOĞUNLUKLU UYGULAMALAR LABORATUVARI
+AIN426 PEKİŞTİRMELİ DERİN ÖĞRENME LABORATUVARI	
+AIN427 VERİ MADENCİLİĞİNE GİRİŞ	
+AIN428 BİLGİ ERİŞİMİ	
+AIN429 VERİ MADENCİLİĞİ LABORATUVARI	
+AIN430 GÖRÜNTÜ İŞLEMENİN TEMELLERİ	
+AIN431 BİLGİSAYARLI GÖRÜYE GİRİŞ	
+AIN432 GÖRÜNTÜ İŞLEME LABORATUVARI	
+AIN433 BİLGİSAYARLI GÖRÜ LABORATUVARI	
+AIN434 HESAPLAMALI FOTOĞRAFİNİN TEMELLERİ	
+AIN440 DOĞAL DİL İŞLEMEYE GİRİŞ	
+AIN441 KONUŞMA ve SES TANIMANIN TEMELLERİ	
+AIN442 DOĞAL DİL İŞLEME LABORATUVARI	
+AIN447 VERİ MADENCİLİĞİNİN TEMELLERİ	
+AIN450 DİNAMİK SİSTEMLER	
+AIN451 ROBOTBİLİME GİRİŞ	
+AIN453 ROBOTBİLİM LABORATUVARI	
+AIN454 BİLİŞSEL ROBOTİĞİN TEMELLERİ	
+AIN455 İNSAN-ROBOT ETKİLEŞİMİNE GİRİŞ	
+AIN457 İNSAN-ROBOT ETKİLEŞİMİ LABORATUVARI	
+AIN461 MANTIKSAL PROGRAMLAMA	
+AIN462 KARAR VERMENİN TEMELLERİ	
+AIN463 ÇOK ETMENLİ OTONOM SİSTEMLER	
+BBM401 ÖZDEVİNİRLER KURAMI ve BİÇİMSEL DİLLER												
+BBM402 HESAPLAMA KURAMI												
+BBM403 KOMBİNATORİK ve ÇİZGE KURAMI												
+BBM404 DERLEYİCİ GERÇEKLEŞTİRİMİNİN TEMELLERİ												
+BBM405 YAPAY ANLAYIŞIN TEMELLERİ												
+BBM406 MAKİNE ÖĞRENMESİNİN TEMELLERİ												
+BBM407 BULANIK MANTIK												
+BBM408 ALGORİTMA ANALİZİ												
+BBM409 MAKİNE ÖĞRENMESİ LABORATUVARI												
+BBM410 DİNAMİK SİSTEMLER												
+BBM411 BİYOENFORMATİĞİN TEMELLERİ												
+BBM412 BİLGİSAYAR GRAFİĞİ												
+BBM413 GÖRÜNTÜ İŞLEMENİN TEMELLERİ												
+BBM414 BİLGİSAYAR GRAFİĞİ LABORATUVARI												
+BBM415 GÖRÜNTÜ İŞLEME LABORATUVARI												
+BBM416 BİLGİSAYARLI GÖRÜNÜN TEMELLERİ												
+BBM418 BİLGİSAYARLI GÖRÜ LAB												
+BBM420 TASARIM PROJESİ II												
+BBM421 OYUN TEKNOLOJİLERİ												
+BBM422 HAREKETLİ HESAPLAMA												
+BBM423 OYUN TEKNOLOJİLERİ LABORATUVARI												
+BBM424 HAREKETLİ HESAPLAMA LAB.												
+BBM431 GELİŞMİŞ BİLGİSAYAR MİMARİLERİ												
+BBM432 GÖMÜLÜ SİSTEMLER												
+BBM433 MİKROİŞLEYİCİLER												
+BBM434 GÖMÜLÜ SİSTEMLER LABORATUVARI												
+BBM436 MİKROİŞLEYİCİLER LABORATUVARI												
+BBM441 YÜKSEK BAŞARIMLI HESAPLAMAYA GİRİŞ												
+BBM442 KOŞUT İŞLEM												
+BBM443 BLOKZİNCİRİNİN TEMELLERİ												
+BBM444 HESAPLAMALI FOTOGRAFİNİN TEMELLERİ												
+BBM446 HESAPLAMALI FOTOGRAFİ LABORATUVARI												
+BBM451 BİLGİSAYAR AĞLARI												
+BBM452 VERİ İLETİŞİMİ												
+BBM453 BİLGİSAYAR AĞLARI LAB.												
+BBM456 BİLGİSAYAR ve AĞ GÜVENLİĞİ												
+BBM458 KABLOSUZ ve MOBİL AĞLAR												
+BBM459 GÜVENLİ PROGRAMLAMA LABORATUVARI												
+BBM460 KABLOSUZ ve MOBİL AĞLAR LABORATUARL												
+BBM461 GÜVENLİ PROGRAMLAMA												
+BBM462 SOSYAL ve EKONOMİK AĞLAR												
+BBM463 BİLGİ GÜVENLİĞİ												
+BBM465 BİLGİ GÜVENLİĞİ LAB.												
+BBM467 VERİ YOĞUNLUKLU UYGULAMALAR												
+BBM469 VERİ YOĞUNLUKLU UYGULAMALAR LAB.												
+BBM471 VERİ TABANI YÖNETİM SİSTEMLERİ												
+BBM472 MEKANSAL BİLGİ SİSTEMLERİ												
+BBM473 VERİ TABANI LABORATUVARI												
+BBM474 MEKANSAL BİLGİ SİSTEMLERİ LABORATUVARI												
+BBM475 YÖNETİM BİLİŞİM SİSTEMLERİ												
+BBM481 YAZILIM GELİŞTİRME												
+BBM482 YAZILIM KALİTE GÜVENCE												
+BBM483 YAZILIM GELİŞTİRME LABORATUVARI												
+BBM484 YAZILIM KALİTE GÜVENCE LABORATUVARI												
+BBM485 YAZILIM MİMARİLERİ												
+BBM486 TASARIM ÖRÜNTÜLERİ												
+BBM488 WEB SERVİSLERİ LABORATUVARI												
+BBM490 WEB MİMARİSİNİN TEMELLERİ												
+BBM491 BİREYSEL YAZILIM SÜRECİ												
+BBM492 TAKIM YAZILIM SÜRECİ												
+BBM493 BİREYSEL YAZILIM SÜRECİ LABORATUVARI												
+BBM494 TAKIM YAZILIM SÜRECI LAB.												
+BBM495 DOĞAL DİL İŞLEMEYE GİRİŞ												
+BBM497 DOĞAL DİL İŞLEMEYE GİRİŞ LAB												
+BBM498 YAZILIM GEREKSİNİMLERİ
+
+https://akts.hacettepe.edu.tr/ders_listesi.php?prg_ref=410c62646915763e016cf1dff1591a52&birim_kod=765&submenuheader=2&prg_kod=765
+
+
+*** ULUSLARARASI KIBRIS ÜNİVERSİTESİ ***
+Müfredat
+Birinci Dönem
+Ders Kodu	Ders Adı	Kredi	Teorik	Lab/Pratik	AKTS
+AIEN100	YAPAY ZEKA MÜHENDİSLİĞİNE GİRİŞ	0	1	0	0
+CMPE101	BİLGİSAYARA GİRİŞ	3	2	2	5
+ENGL031	DESTEK İNGİLİZCE-I	0	6	0	0
+ENGL033	DESTEK İNGİLİZ DİLİ-I	0	4	0	0
+ENGL141	OKUMA VE YAZMA BECERİLERİ-I	3	2	2	4
+MATH101	ANALİZE GİRİŞ-I	4	3	2	6
+MATH121	LİNEER CEBİR	2	2	0	4
+PHYS101	GENEL FİZİK-I	4	3	2	6
+TREG100	TÜRK DİLİ	0	2	0	2
+TURK100	TÜRKÇE	0	2	0	2
+İkinci Dönem
+Ders Kodu	Ders Adı	Kredi	Teorik	Lab/Pratik	AKTS
+CMPE112	PROGRAMLAMAYA GİRİŞ	4	3	2	6
+ENGL032	DESTEK İNGİLİZCE-II	0	6	0	0
+ENGL034	DESTEK İNGİLİZ DİLİ-II	0	4	0	0
+ENGL142	OKUMA VE YAZMA BECERİLERİ-II	3	2	2	4
+HIST100	MEDENİYET TARİHİ	0	2	0	2
+MATH102	ANALİZE GİRİŞ-II	4	3	2	6
+MATH122	AYRIK MATEMATİK	3	3	1	5
+PHYS102	GENEL FİZİK-II	4	3	2	6
+TARH100	MODERN TÜRKİYE TARİHİ	0	2	0	3
+Üçüncü Dönem
+Ders Kodu	Ders Adı	Kredi	Teorik	Lab/Pratik	AKTS
+AIEN201	YAPAY ZEKA İLKELERİ	3	3	0	0
+CMPE221	SAYISAL TASARIM	4	3	2	5
+CMPE223	ALGORİTMA VE PROGRAMLAMA	4	3	2	6
+MATH203	DİFERANSİYEL DENKLEMLER	3	3	1	6
+MATH205	OLASILIK VE İSTATİSTİĞE GİRİŞ	4	4	1	6
+Dördüncü Dönem
+Ders Kodu	Ders Adı	Kredi	Teorik	Lab/Pratik	AKTS
+AIEN202	VERİ BİLİMİNE GİRİŞ	4	3	2	0
+CMPE214	GÖRSEL PROGRAMLAMA	3	3	1	6
+CMPE242	VERİ YAPILARI VE VERİ ORGANİZASYONU	4	3	2	7
+INDE232	MÜHENDİSLİK EKONOMİSİ	3	3	0	4
+MATH202	MÜHENDİSLER İÇİN MATEMATİK METODLARI	4	3	2	6
+Beşinci Dönem
+Ders Kodu	Ders Adı	Kredi	Teorik	Lab/Pratik	AKTS
+AIEN301	YAPAY ZEKA İÇİN PROGRAMLAMA	3	3	1	0
+CMPE313	NESNE YÖNELİMLİ PROGRAMLAMA	4	3	2	7
+CMPE343	VERİTABANI YÖNETİM SİSTEMLERİ VE PROGRAMLAMA-I	4	3	2	6
+CMPE351	İŞLETİM SİSTEMLERİ	4	3	2	6
+EELE321	SİNYALLER & SİSTEMLER	4	4	1	7
+Altıncı Dönem
+Ders Kodu	Ders Adı	Kredi	Teorik	Lab/Pratik	AKTS
+AIEN302	MAKİNE ÖĞRENİMİ	4	3	2	0
+AIEN304	NÖROBİYOLOJİ	3	3	0	0
+CMPE326	SİNYAL VE İMGE İŞLEME	3	3	1	5
+CMPE332	TEMEL BİLGİSAYAR AĞLARI	4	3	2	7
+UNIEXX1	ÜNİVERSİTE SEÇMELİ	3	3	0	4
+Yedinci Dönem
+Ders Kodu	Ders Adı	Kredi	Teorik	Lab/Pratik	AKTS
+AIEN300	YAZ STAJI	0	0	0	0
+AIEN421	SİNİR AĞLARININ TEMELLERİ	3	3	0	0
+AIENXX2	ALAN SEÇMELİ	3	3	0	0
+AIENXX3	ALAN SEÇMELİ	3	3	0	0
+EELE411	ROBOT TEKNİĞİ	3	3	1	5
+ENGI401	PROJE YÖNETİMİ	3	3	0	4
+Sekizinci Dönem
+Ders Kodu	Ders Adı	Kredi	Teorik	Lab/Pratik	AKTS
+AIEN422	DOĞAL DİL İŞLEME	4	3	2	0
+AIENXX4	ALAN SEÇMELİ	3	3	0	0
+AIENXX5	ALAN SEÇMELİ	3	3	0	5
+ENGI402	PROJE	4	2	4	8
+UNIEXX2	ÜNİVERSİTE SEÇMELİ	3	3	0	4
+Seçmeli Ders
+Ders Kodu	Ders Adı	Kredi	Teorik	Lab/Pratik	AKTS
+CMPE485	BİLGİSAYAR SİMÜLASYONU	3	3	0	
+
+
+
+
+*** ITU  yz dersleri ***
+
+
+1. Yarıyıl
+Ders Kodu	Ders Adı	Kredi	Ders	Uyg.	laboratuvar	DAVRANMAK	Türü	Z / S	Yarıyıl
+FİZ 101E
+fizik ben	3	3	0	0	4.5	AYRICA	İTİBAREN	1
+FİZ 101EL
+Fizik I Laboratuvarı	1	0	0	2	1.5	AYRICA	İTİBAREN	1
+BLG 101E
+Intr. Bilgi Sistemlerine	2	1	2	0	5	ÇB	İTİBAREN	1
+YZV 101E
+Intr. AI ve Veri Mühendisliği ve Etik	1.5	1	1	0	8.5	ÇB	İTİBAREN	1
+MAT 103E
+matematik I	4	3	2	0	6	AYRICA	İTİBAREN	1
+MAT 281E
+Lineer Cebir ve Uygulama.	3	3	0	0	4	AYRICA	İTİBAREN	1
+VE 101
+Akademik Danışmanlık	1	0	2	0	1	ITB	İTİBAREN	1
+2. Yarıyıl
+Ders Kodu	Ders Adı	Kredi	Ders	Uyg.	laboratuvar	DAVRANMAK	Türü	Z / S	Yarıyıl
+MAT 104E
+Matematik II	4	3	2	0	6.5	AYRICA	İTİBAREN	2
+BLG 112E
+Ayrık Matematik	3	3	0	0	5	AYRICA	İTİBAREN	2
+YZV 102E
+Int.toPrg.forDataSci.(Python)	4	3	2	0	8.5	ÇB	İTİBAREN	2
+FIZ 102E
+Fizik II	3	3	0	0	4.5	AYRICA	İTİBAREN	2
+FİZ 102EL
+Fizik II Laboratuvarı	1	0	0	2	1.5	AYRICA	İTİBAREN	2
+ING 112
+İngilizce ben	3	3	0	0	3.5	ITB	İTİBAREN	2
+3. Yarıyıl
+Ders Kodu	Ders Adı	Kredi	Ders	Uyg.	laboratuvar	DAVRANMAK	Türü	Z / S	Yarıyıl
+YZV 201E
+Veri Yapıları	3.5	3	1	0	7.5	ÇB	İTİBAREN	3
+YZV 211E
+Veri Bilimi ve Müh.	3	3	0	0	7.5	ÇB	İTİBAREN	3
+YZV 231E
+Prob.& Stat. Veri Bilimi için	4	4	0	0	7.5	AYRICA	İTİBAREN	3
+ING 201
+İngilizce III	3	3	0	0	3.5	ITB	İTİBAREN	3
+ 	ITB Seçmeli I	3	 	 	 	4	ITB	S	3
+4. Yarıyıl
+Ders Kodu	Ders Adı	Kredi	Ders	Uyg.	laboratuvar	DAVRANMAK	Türü	Z / S	Yarıyıl
+MAT 210E
+Mühendislik Matematiği	4	4	0	0	5.5	AYRICA	İTİBAREN	4
+BLG 311E
+Resmi Diller ve Otomatlar	3	3	0	0	5	AYRICA	İTİBAREN	4
+BLG 454E
+Verilerden Öğrenmek	3	3	0	0	5	ÇB	İTİBAREN	4
+BLG 202E
+CE'de Sayısal Yöntemler	3	3	0	0	5	AYRICA	İTİBAREN	4
+YZV 202E
+Veri Bilimi için Optimizasyon	3	3	0	0	5.5	ÇB	İTİBAREN	4
+ 	ITB Seçmeli II (SNT)	3	 	 	 	4	ITB	S	4
+5. Yarıyıl
+Ders Kodu	Ders Adı	Kredi	Ders	Uyg.	laboratuvar	DAVRANMAK	Türü	Z / S	Yarıyıl
+YZV 302E
+Derin Öğrenme	3	3	0	0	8	MT	İTİBAREN	5
+BLG 317E
+Veritabanı Sistemleri	3	3	0	0	4.5	MT	İTİBAREN	5
+BLG 335E
+Algoritmaların Analizi I	3	3	0	0	4.5	MT	İTİBAREN	5
+YZV 312E
+Veri madenciliği	3	3	0	0	8	MT	İTİBAREN	5
+TUR 101
+Türk Dili I	2	2	0	0	2	ITB	İTİBAREN	5
+ 	TM Seçmeli I	3	 	 	 	4/5	ÇB	S	5
+6. Yarıyıl
+Ders Kodu	Ders Adı	Kredi	Ders	Uyg.	laboratuvar	DAVRANMAK	Türü	Z / S	Yarıyıl
+YZV 322E
+Uygulamalı Veri Mühendisliği	2	0	0	4	8.5	ÇB	İTİBAREN	6
+BLG 336E
+Algoritmaların Analizi II	3	3	0	0	5	MT	İTİBAREN	6
+TUR 102
+Türk Dili II	2	2	0	0	2	ITB	İTİBAREN	6
+VE 301E
+Kariyer Danışmanlığı	1	0	2	0	1	ITB	İTİBAREN	6
+YZV 321E
+Yapay Zeka Fonu	3	3	0	0	8.5	MT	İTİBAREN	6
+ 	TM Seçmeli II	3	 	 	 	4/5	ÇB	S	6
+7. Yarıyıl
+Ders Kodu	Ders Adı	Kredi	Ders	Uyg.	laboratuvar	DAVRANMAK	Türü	Z / S	Yarıyıl
+ATA 101
+Atatürk İlk & İnkılap Trh I	2	2	0	0	2	ITB	İTİBAREN	7
+YZV 401E
+Yapay Zeka ve Veri Müh.'in Hukuki Yönleri	2	2	0	0	2	ITB	İTİBAREN	7
+YZV411E
+Büyük Veri Analitiği	3	3	0	0	6	MT	İTİBAREN	7
+YZV 4901E
+AI ve Veri Mühendisliği Tasarımı I	3	1	4	0	8	MT	İTİBAREN	7
+ 	TM Seçmeli III	3	 	 	 	4/5	ÇB	S	7
+ 	MT Seçmeli I	3	 	 	 	5/7	MT	S	7
+ 	MT Seçmeli II	3	 	 	 	5/7	MT	S	7
+8. Yarıyıl
+Ders Kodu	Ders Adı	Kredi	Ders	Uyg.	laboratuvar	DAVRANMAK	Türü	Z / S	Yarıyıl
+ATA 102
+Atatürk İlk & İnkılap Trh II	2	2	0	0	2	ITB	İTİBAREN	8
+EKO 201E
+ekonomi	3	3	0	0	4	ITB	İTİBAREN	8
+YZV 4902E
+Yapay Zeka ve Veri Mühendisliği Tasarımı II	5	1	8	0	12	MT	İTİBAREN	8
+ 	MT Seçmeli III	3	 	 	 	5/7	MT	S	8
+ 	MT Seçmeli IV	3	 	 	 	5/7	MT	S	8
+TOPLAM KREDİ : 135  TOPLAM AKTS : 240
+
+
+
+
+
+
+
