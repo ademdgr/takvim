@@ -1,0 +1,80 @@
+PATİKA DEV EĞİTİMLERİ :,
+
+* Herkes için Temel Dersler
+* Visula Studio Code Kullanımı
+* Yazılım Dünyasında Kariyer Basamakları
+
+* VeriYapıları ve Algoritmalar : 
+
+- Temel Kavramlar :  
+ Algoritma Nedir?
+ Bilgilerin Bilgisayarda İfadesi
+ Sayı Sistemleri
+ Sayısal Olmayan Verilerin Tutulması
+ Verilerin Tutulması
+ Recursion
+
+- Veri Yapıları : 
+ Array
+ Linked List
+ Linked List vs Array farkı 
+ Linked List Eleman Ekleme/Silme
+ Stack
+ Queue
+ Hash Table
+ Hash Function
+ Hash Collision
+
+- Algoritma Analizi :
+ Algoritma Analizi Giriş
+ RAM Modeli
+ Time Complexity
+ Big O Notation
+
+
+
+Recursion : öz yineleme : 
+Çözüm için parçalandığında kendini tekrar eden fonksiyonel çıkıyorsa 
+yani fonksiyon içinde fonksiyon kendisini çağıra biliyorsak 
+faktöriyel : 5! =5.4! // fibonacci : önceki iki sayının toplamı en son sayıyı verir
+
+Arraylar daha az yer tutar, daha hızlı ulaşılır , statik yerlerde kullanılabilir
+Linked listler ekleme çıkarma işlemleri daha hızlı olur , dinamik listelerde kullanılabilir
+
+Random access : listedeki 1. ye de 10. ya da aynı hızla ulaşması / arraylerde 
+
+stack  : lifo : songiren ilk çıkar : yığın 
+push ekleme / pop : çıkarma 
+
+queue . fifi : ilk giren ilk çıkar : kuyruk - öbek 
+enequeu : ekleme / dequeue : çıkarma
+
+HasTable : HasFunctions : 
+elimizde var olan verileri bir fonksiyondan geçirip index'liyoruz. 
+Bu fonksiyona hash function, bu fonksiyon ile birleştiğimiz dizi yapısına ise Hash Table diyoruz.
+index , label , etiket bazlı 
+
+collision : Hash Function farklı iki değerden aynı sayı üretilirse 
+
+büyüme hızı : rate of graowth : veriler büyüdükçe harcanan zaman
+random access machine : düşünsel bilgisayar . varsayıyoruz . her işlem bir birim 
+
+time complexity : 
+worstcase , best case  average case (aranan nesnelerin ne kadar pa aldığını bilmek gerekir .. 
+yazılan dilde c nesnesi yüzde 50 girdi ise ağırlık başa doğru kaydığı için hızı artırmaktadır.
+
+big o notation : katsayıları önemseme n^5 o(n2) olarak değerlendirilir . 
+burada hangi kategoriye girdiğini bulmak amaçlanır
+worstcase hesaplama yapılır
+
+O(1) -> Constant  : hep 1 
+O(log N) → Logarithmic çok iyi 
+O(N) -> Linear iyi
+O(N log N) → Linearithmic kötü 
+O(N^ 2) → Quadratic  çok kötü 
+O(c^N)→ Exponential çok kötü 
+O(N!) → Factorial çok kötü
+
+
+
+

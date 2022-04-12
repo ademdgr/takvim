@@ -1,0 +1,77 @@
+
+### Veri Bilimci Yetiştirme Programı 
+
+Eğitimde hangi projeler yapılacaktır?
+Sorting
+Scoring
+AB Testing
+KPI & Cohort Analizi
+BG-NBD: Expected Sales Forecasting
+Gamma-Gamma:Expected Average Profit
+Customer Lifetime Value prediction
+Talep Tahmin Modeli & Zaman Serileri
+Birliktelik Analizi ve Tavsiye Sistemleri
+RFM Analizi ile Müşteri Segmentasyonu
+Ev fiyat tahmin modeli
+Makine Öğrenmesi ile Şeker Hastalığı Tahmini
+Kurumsal Müşteri Terk Modellemesi
+Kredi Risk Modellemesi
+Anasayfa İçerik Stratejisi Belirleme
+PyCharm ile large scale proje geliştirme
+
+
+
+-----------------------------------------------
+### Data Engineering bir işletmenin verisinin istenilen yer, zaman, format, 
+doğruluk ve tutarlılıkta hazır edilmesini sağlayan sitemin tasarlanması, 
+inşa ve idame edilmesini sağlayan bir disiplindir.
+
+Program süresince bahsedilecek konular
+Linux Basic, Bash Script
+Git Basic
+Crontab
+Postgresql Basics
+Docker & Kubernetes
+Apache Hadoop HDFS,
+YARN, Hive
+Apache Sqoop
+Apache Kafka
+Apache Spark Dataframe API
+Spark Optimization Techniques
+Delta Lake
+Apache Spark Streaming
+Introduction to NoSQL and CAP Theorem
+Elastic Stack (Elasticsearch, Logstash, Kibana, Beats)
+Apache Cassandra
+MongoDB
+Apache Airflow
+Demos:
+
+Multinode Kubernetes Cluster
+Extras:
+
+Introduction to Apache Flink
+
+
+
+Program süresince proje gerçekleştirilecek konular
+PySpark
+Data Pipeline
+ETL
+Streaming
+--------------------------------------------------
+## Machine Learning Operations:
+
+Bu eğitimde aşağıdaki soruların ve daha başka bir çoğunun cevaplarını bulacağız.
+
+Bir API ile modeli nasıl sunarız?
+Modelimizi konteyner imajı haline nasıl getiririz?
+Modelimizi Docker ve Kubernetes üzerinden nasıl sunarız?
+Modelimizi bulutta nasıl sunarız?
+Uçtan uca MLOps tasarımı nasıl bir şey olur?
+Model geliştirirken ML Pipelines kullanmanın faydaları nelerdir?
+Modeli tekrar ne zaman eğitiriz?
+İşleri nasıl otomatiğe bağlarız?
+MLOps’ta da CI/CD var mı?
+MLOps için hangi araçlar var?
+Bulutta model deployment için hangi servisler var?

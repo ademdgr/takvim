@@ -1,0 +1,451 @@
+JAVA İLE PROGRAMLAMAYA GİRİŞ
+
+ - İDE >> İntellij ıdea / netbeans / eclipse 
+
+
+string : kelime
+
+ - primitif types : value değer tip : değerleri stackta(yığın) tutulur. 
+int  : integer : tam sayı
+float : 
+double : 
+long : 
+short: 
+byte :
+boolean : 
+char : 
+
+
+referans types : stackta ıdsi bulunup verileri heapte(öbek) bulunur.
+class, string!, arrays, arrayLists, abstract, interface
+garber colector : çöpcü : boş olan heapteki alanları siler
+
+
+ - conditionals : koşullu süreçler : if - else if  - else 
+
+
+ - döngüler : 
+
+for / while / do while
+swich döngüsü : case (her madde )- break(her madde bitişi) - default (tüm maddeler dışında kalan )
+
+ - Arrays : diziler
+multi dimensional arrays : çok boyutlu diziler 
+
+ - Arraylist : Koleksiyonlar : yeni dizi oluştururken eski dizinin değerlerini alarak oluşturuyor , arraydan farkı bu 
+
+ - functions :
+.length : uzunluk
+.charAt(5) : 6. karakter
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+.
+sayilar.get(0) ilk indexi getir - arrayList
+sayilar.set(0,100) ilk indexi 100 olarak değiştir - arrayList
+saylar.remove(index:0) ilk indeksi sil  - arrayList
+sayilar.clear() listeyi tümden sil - arrayList
+sayilar.sort() dizide sıralama yap - arrayList
+
+sozluk.put<"book","adam"> ekleme yapıyor - hashMap
+sozluk.size boyut - hashMap
+sozluk.keySet anahtar setini getiriyor - hashMap
+
+
+ - methods : 
+
+
+
+ - OOP : Object Oriented Programming : Nesne Yönelimli Programlama 
+
+ - class : sınıflar 
+nesne yönelik programlama
+kullanmak için "new"lenmeli 
+ortak operasyonları tutar
+
+
+ - SOLİD : Sürdürülebilir yazılım
+Single : tek bir blog tek bir iş yapar 
+Open close  : yeni bir şey yazmak gerektiğinde eski sistemi değiştirmeden yeni şeyler adapte edilecek şeklindeki yazılım sistemi
+geliştirmeye açık , değiştirmeye kapalı 
+L : Listov Subsititution : inheritance ile alakalı : Benziyor gibi olan şeyleri ayırmak , gerçek - tüzel müşteri gibi 
+ve miras aldıkları annenin tüm özelliklerine sahip olmalı, yani annede çocukta olmayan özellik olmamalı
+ki miras işine ters bir durum olacaktır. 
+İ : İnterface Segregation Principle : arayüzlerle ilgili : interfacelerin doğru şekilde parçalara ayrılması 
+D : Dependency Inversion Principle : katmanlarla ilgili : üst seviyeli katmanlar kesinlikle alt seviyedeki katmanlara bağlı olmamalı, 
+bağımlılıklar sadece abstract (soyut) kavramlara olmalıdır ki alt seviyede ne yapıldığı nasıl yapıldığı üst katmanı ilgilendirmez
+IOCde kullanılan prensip
+
+
+
+
+ - Access Modifiers : Erişim bildirgeçleri : Değiştiriciler : Erişilebilirlik kontrolü sağlıyor 
+ * Public : Her yerden
+ * internal : default : dışarıdan erişilemez ama proje içinde erişilebilir 
+fakat private gibi korumalı bir sınıf içinde yazılan başka bir default yine korumalı olarak default olur
+ * Protected : kod blogu + inhareitance alıp verdiği classlarda da geçerli 
+ * Private : sdc stündeki parantez içinde geçerli yani sdc tanımlandığı blok içerisinde
+ana segmentlerde private yapamazsın .. iç içe classlarda yapabilirsin .. 
+
+ - Encapsulation :
+Getter / Setter : kısıtlama ve kural koyuyoruz , kontrollü veri girişi sağlıyoruz. 
+
+ - Constructor : Yapıcı fonksiyonlar : yeni bir tanesini oluşturması , "new"lemesi
+
+ - Overloading : Aşırı yüklenme ama aynı değişkeni bir çok yerde kullana , mesela degsken = 1 kullandık, farklı bir yerde degsken = "adem" diyebiliyoruz.
+
+ - İnheritance : Miras : bir tane annesi olabilir ama bir çok çocugu olabilir, kişiler annesi personal ve müşteriler çocuğu gibi 
+"extends" ile inheritance yapılır
+
+ - Polimorfizm : çok biçimlilik : miras alınan classtan ayrılarak değer işlemesi , hayvan sesi anne classta , domuz sesi domuz classında kullanılabilir
+kısaca aynı yerde kardeş interface yada çocuk klasslarını secebilmemizi sağlayan yapı ..yani benzer interface ve çocuk klasslara tek bir yerden seçmemizi sağlıyor
+örnek olarak şekil class içinde şekil methodu yazıyoruz ve hem diktörgen hem şekil hangisini istersek içine atabiliyoruz
+"override" ile anneden gelen özelliği ezebiliyoruz. Overriding deniyor .
+
+ - virtual (sanal) metod : override ile ezebildiğimiz metodun ismi , yani çoğu zaman anneden direk kural geliyor, bazen o kuralı ezebiliyoruz, polimorfizm ile ilgili 
+
+- Abstract sınıflar  : soyut muğlak yarım kalmış sınıflar  .. bazı özellikleri çocuk classın doldurmasını istiyor yani tamamlanmamış sdc imzası olan operasyonlar olabilir 
+new yapılamaz(eksik çünkü),final kullanılamaz(çünkü değiştirilecek) anneyi kullanmazsın sdc çocuğu kullanıp eksik kodları tamamlamak gerekiyor , anne arka planda kalıp kuralları belirliyor
+
+- İnterface : arayüzdür , sınıf değildir , classlara imza zorunluluğu getirir, if kullanmamamızı sağlar
+implement edilir , başına I konulur , kuralları belirler , birden çok interface aynı classta çağrılabilir .absract sınıftan farkı katmanların geçişinde kullanılmasıdır . 
+her şey public olmalıdır çünkü hepsine zorunlu ulaşılacak 
+
+ - Static : "new"lenemez , tek bir kez oluşturulup değiştirilemeyen yapı , pi sayısı gibi ,ürürün id name price olmadan klenmesine izin verme gibi zorunluluk belirtir
+
+ - Package : paketleme , gruplandırma , aynı işlevi gören fonksiyonarı aynı yere alma , böylece kütüphaneler ve modüller oluşturulur
+tanımlılar : built in func 
+"import" ile hazır paket çağrılır
+
+ - HashMap : dictionary : hashMap<string, string> sozluk =new hashMap <string,string>
+sozluk.put("book","adam"> ekleme yapıyor
+import hashMap
+
+ - Framework : uygulama çatısıdır , projeler framework üzerinde inşa edilirler
+ASP.NET, Angular gibi 
+
+ - Library : kütüphaneler : metodların tutulduğu yerler , proje iskeleti barındırmazlar 
+jquery gibi 
+
+
+ - Restfull yapılar : 
+Birçok dilde kendi API'ınızı yazıp, yine dil bağı olmadan istediğiniz dilde yazılmış 
+uygulamalar, web siteleri, başka servisler ile entegre edebilirsiniz.
+temelinde HTTP protokolü üzerinden haberleşen bir mimari yaklaşımdır.
+
+ - ORM ve ya Object Relational Mapping denilen kavram aslında bizim kod bloklarımız ile veritabanımız arasında oluşan bir köprüdür.
+. İlişkisel Veritabanımız, bizim katmanlara ayırdığımız programımız arasında (OOP) veri alışverişini sağlar. 
+ORM veritabanımızda ki tablolarımızı class’lara çevirir.  
+Projenizde MS-SQL kullanıyorken karar değiştirdiniz ,MySql kullanmaya başladınız. 
+Bu durum sizin ORM nize bir sıkıntıya neden olmaz aynı şekilde kaldığınız yerden devam edebilirsiniz.
+JAVA için kullanılan ORM’ler
+
+ – Hibernate (Yakında Anlatılmaya Başlanacak)
+ – JPA
+ – EclipseLink
+ – Apache Cayenne
+
+
+ - Java Persistence API (JPA), Object Relational Mapping (ORM) teknoloji apilerinden bir tanesi olup 
+database tarafinda tum table larin program tarafinda ki bir (entity) class a denk gelmesi 
+ve tum islemlerinin bu (entity) class uzerinde yapilmasini sağlayan bir teknolojidir.
+
+
+.
+
+
+ - 3 Katmnalı mimari:
+data access : veri erişim : select , insert , update, truncate 
+business : iş kodaları : 
+user interface : asp.net / angular  : kullanıcı arayüzü 
+
+
+ - - WCF -  Windows Communication Foundation WCF, web servis, tcp -ıp iletişimi için kullanılır
+servis-yönelimli mimariyi temel alarak dağıtık-uygulamalar geliştirmek için kullanılan, 
+dağıtık mimari modelleri ve teknolojileri tek çatı altında birleştiren ve içerisinde bir çok hazır bileşen barındıran bir Framework API‘sidir
+java kullanan ile .net kullananlar arasında ortak nokta oluşturuyor
+kısaca tek kod yazıp farklı servis mimarilerinde kullanım anlamına geliyor 
+amaç farklı uygulamalarla iletişim mak 
+
+ - Windows Form Uygulaması : event bazlı , sdc windowsda , çözünürlük kısıtlı , responsible değil , de
+
+ - WPF :ASP.NET WEB FORM .  daha avantajlı,  yine event , hantal , çözünürlüğe  duyarlı, 
+model - view - view model tasarım deseni , iki yönlü binding
+prism framework kullanılıyor
+
+ - ASP.NET MVC : Arayüz için tasarım deseni , katmanlı mimari değil , 
+controller - view - model
+mvc tasarım deseni windowsa ait değil, ama asp net mvc , mvc tarzında yazılmış desendir 
+
+ - Hata Yönetimi : 
+try - catch - finally 
+
+ - Dosyalarla Çalışmak : 
+. file.getNamme
+.
+.
+.
+.
+.
+.
+.
+.
+
+
+ - Therading : Aynı anda birden çok iş yaptırma , işlemciden verimlilik adına, hız artırma
+
+ - JDBC : database bağlanmayı sağlıyor, bir kütüphanedir , 
+
+ - DOM Document Object Model Manipulasyon : html üzerinde javascript ile değişiklikler yapmak 
+
+ - Event : kullanıcının sayfaya tıklaması , mouse ile üzerine gelmesi gibi aksiyon sonrası bir işlem yapmaya denir. üzerine gelince açılan sayfa gibi
+
+ - Nodelar : html de her alan bir nodedur .. içiçe olan bebekler gibi matruşka bebeği gibi .. 
+
+ - EcmaScript : javascript standartlarının oluşturulması 
+
+ - Scope : erişilebilirlik : javada  : 
+var : herkes , 
+let değiştirilemez ama değer değiştirilebilir ,  valuedan lette tek olur , 
+const ise hiç değişmez tamamen stabil , 
+ama const ve lette referans tipte değişiklik yapılabilir .
+
+ - ileri fonksiyonlar :
+
+ - ileri diziler :
+.foreach : amamını gez
+.map yeni dizi oluşturur
+.filter  filtreleme yapar
+. reduce toplama
+
+ - ileri nesneler :
+this.
+
+- SPA (Single Page Application) :  her yeni sayfanın içeriğinin yeni HTML sayfaları yüklemek yerine 
+JavaScript’in mevcut sayfadaki sadece değişen sayfaya ait DOM öğelerini değiştirerek dinamik olarak oluşturduğu web sitesi tasarım yaklaşımıdır.
+
+
+ - directives : 
+* Component Directives : Angular Component’ler özelleşmiş directive ‘lerdir. Directive ‘lerin template’li olanlarıdır da diyebiliriz. 
+Component Directive ‘ler ana sınıfı oluşturur. 
+Component’in çalışma süresinde nasıl başlatılıp işlenmesi ve nasıl kullanılması gerektiğine yön verir.
+* Structural Directives : DOM nesnesinin yapısını manipule etmek ve değiştirmek için kullanılır. “*” işareti ile başlarlar.
+ngFor 
+ngİf
+* Attribute Directives :DOM nesnesinin görünümünü ve davranışını değiştirmek için kullanılır.
+ngClass
+ngStyle
+
+* ng-init : Bir uygulama için başlangıç değerlerini tanımlar.
+* ng-modal : HTML denetimlerinin değerini uygulama verilerine bağlar.
+Uygulama verileri için tür doğrulaması sağlayın (numara, e-posta, gerekli).
+Uygulama verileri için durum sağlayın (geçersiz, kirli, dokunulmuş, hata).
+HTML öğeleri için CSS sınıfları sağlayın.
+HTML öğelerini HTML formlarına bağlayin. 
+*ng-repeat : Yönerge bir HTML öğesini yineler:ng-repeat
+*ng-app : Yönerge, AngularJS uygulamasının kök öğesini tanımlar. ng-app
+Yönerge, bir web sayfası yüklendiğinde uygulamayı otomatik olarak önyükler (otomatik olarak başlatır
+
+ - Servisler : farklı komponentlerde aynı veriye ihtiyaç duyuyorsak servislerden yararlanıyoruz
+
+ - Pipe : verileri dönüştürmek için kullanılan yapılar : DatePipe / uppercase  / currency / 
+
+ - BOOTSTRAP :  Hazır şablonlar sağlıyor .. HTML5 ve CSS3 ile güçlendirilmiş, hazır html ve hazır css şablonları içeren 
+ve tabiki javascript, jquery ile desteklenmiş açık kaynak kodlu bir kütüphanedir (framework)
+
+ - HTML : Web sayfalarını oluşturmak için kullanılan standart metin işaretleme dilidir. Dilin son sürümü HTML5'tir.
+
+ - http : Köprü Metni Aktarım Protokolü (HTTP),
+get getirir, post sunucuya veri götürür, put sunucuya veri koyar
+head get gibi , delete sil , option seçenek sunar 
+
+ - CSS : Cascade Style Sheet, HTML‘e ek olarak metin ve format biçimlendirme alanında fazladan olanaklar sunan bir web teknolojisidir. 
+
+ - JAVA : platformdan bağımsız çalışan, yüksek hızlı, basit tasarımlı, güvenli, nesne tabanlı ve dinamik bir programlama dilidir.
+
+ -  JavaScript Yani bir web sayfasına hareket katan, sayfaları eğlenceli hale getiren, bir işlem yaparken minik dialog pencereleri açan, 
+yanıp sönen efektler veren script dili.
+
+ - npm : node.js : hazır kütüphaneler, çok hızlı yazılım : atıom.io ile code editörü kullanılabilir
+
+ - TypeScript :  İstemci tarafında (client-side) veya sunucu tarafında (server-side) çalışabilen JavaScript uygulamaları geliştirmek için kullanılabilir.
+javascriptin geliştirilmiş halidir, TypeScript ile birlikte derleme aşamasında hata denetimi yapılabilen bir JavaScript sunmayı amaçlamıştır. 
+
+ - Json (JavaScript Object Notation) insanlar tarafından okunabilen bir veri değişim biçimidir. 
+XML’in Javascript ile verimli olarak kullanılamamasından dolayı JSON tercih ediliyor.
+JSON’un temel amacı veri alış verişi yaparken daha küçük boyutlarda veri alıp göndermektir.
+objectten farklı olarak yazarken "id" gibi valueları çift tırnak şeklinde verilmeli 
+
+ - HttpClientModule : api lere ulaşmak için html nin geliştirilmiş hali 
+
+ - Observable : gelen data subscribe gelesiye kadar çalışıyor 
+çalışma sırasında biz araya girip fonksiyon map loglama  hata yakalama gibi işlemleri yapabiliyoruz
+import {Observable} from 'rxjs';
+
+ - Routing mimarisi : /hakkımızda / arşiv gibi site adının arkasında iç içe geçmiş şekilde linklerin gelmesi 
+
+ - activeteRoute :  ActivatedRoute, açısal uygulamanın belleğinde yönlendirici durum ağacını içerir.
+kısaca uygulamada açılan url içerisindeki id gibi parametreleri yakalayabilir 
+urlde aranan parametre gelince aktif oluyor 
+
+ - Reaktif formlar, değerleri zaman içinde değişen form girişlerini işlemek için model odaklı bir yaklaşım sağlar. 
+
+ - LocalStorage : Çerez mantığı ile çalışan local storage ile tarayıcı kapansada sayfa değişsede bilgi silinmeyene kadar kalır hafızada
+Local Storage içerisine oluşan kayıtlar kalıcı kayıtlardır(tarafınızdan silinmediği sürece)
+
+ - CanActivate Guard : 
+Kullanıcının oturum açıp açmadığına denetleme
+Kullanıcının izni olup olmadığını denetleme
+
+
+ - Entity Framework ORM(Object Relational Mapping) araçlarından biridir. 
+
+ - ORM :  Object to Relational Mapping temel olarak veritabanında yer alan tablo ve alanları nesne olarak kullanmamıza imkan veren bir yazılım mimarisidir.
+İlişkisel veritabanı ile nesneye yönelik programlama(OOP) arasında bir köprü görevi gören araçtır.
+Kısaca veritabanına bizim nesnelerimizi bağlayan ve bizim için veri alışverişini yapan Microsoft tarafından geliştirilmiş bir framework’tür.
+
+Cors Konfiegurasyonu : tarayıcıdan gelen isteklerin izin verilip verilmemesini ayarlayan yapı 
+
+ -Repository temel olarak veritabanı sorgulama işlemlerinin bir merkezden yapılmasını sağlayarak 
+iş katmanına taşınmasını önler ve bu şekilde sorgu ve kod tekrarına engel olmuş olur. 
+Yani asıl amaç veri işlem ve sorgulamaların tekrarlardan kaçınılarak merkezi bir yapıya çekilmesidir. 
+Bu sayede veritabanı işlemlerimizi tekrar ve tekrar iş katmanı içinde yazmak durumununda kalmamış oluruz.
+beraberinde asıl işi yapan bölümler ile veriye erişen bölümlerin birbirinden soyutlanması mantığını da getirmiştir.
+
+ - Autmapper : belirttiğimiz kurallar doğrultusunda mapleme işimi otomatik hale getirmek.
+
+ - jwt : login olan kişiye token anahtar veriliyor , o anahtar nereleri açabiliyor ise onunla açabilecek diğer yerlere erişemeyecek 
+
+ - AuthRepository : giriş işlemlerinin yapılmasını sağlayan yapı 
+ 
+ 
+
+
+
+
+ANGULER 
+
+@import "~bootstrap /dist/css/bootstrap.min.css";
+@import "~font-awesome/css/font-awesome.min.css";
+
+<h3 *ngIf="products"> {{title}};else noProducts </h3> // eğer ürün varsa başlığı yaz 
+<ng -template #noproducts> yapılacak iş yok </ng-template> // eğer ürün yoksa bunu yazacak 
+
+<li *ngfor ="let eleman of elemalardizisi ">{{ eleman}} </li> // elemanlardizisi dizisi içerisinde elemanları gezip yazacak
+
+
+
+
+
+
+
+** İLERİ SEVİYE JAVA **
+
+
+SPRİNG FRAMEWORK :  Java tabanlı enterprise uygulamalar için kapsamlı bir programlama ve konfigürasyon altyapı desteği
+
+
+ - Model View Controller Architecture (MVC) : Model – View – Controller bir web uygulaması mimarisidir. 
+Uygulamanın arayüz, veri, iş-işlem gibi sorumluluklar bakımından katmanlara bölünerek gerçekleştirilmesini sağlar. 
+Bu sayede katmanlar biribirinden bağımsız olarak kullanılabilir ve güncellenebilir. 
+ Mimariyi sağlanan katmanlar üzerinden ele alacak olursak:
+Model: Uygulama verisinden sorumlu katmandır. Object oriented anlamda uygulamamız için gereken nesne tanımlarıdır diyebiliriz.
+View: Model verisinin arayüz olarak kullanıcıya sunulmasından sorumlu katmandır.
+Controller: Kullanıcı isteklerininin değerlendirilip, ilgili modelde gerekli güncellenme sürecinden sorumlu katmandır.
+
+
+ - IOC : Inversion of Control : Kontrolun yer değiştirmesi : Bağımlılıkları yok etmek amaçlanıyor 
+bir kutu gibi , interfacelerden ne gerekiyorsa onu alıyor , bu işleri hazır frameworklar yapıyor
+Bizim kod bloğumuz hariç, bütün her şeyin yönetimi framework tarafından kontrol edilmesi 
+Spring boottaki gibi 
+Castle, Ninject, unity,Structure,Autoface gibi 
+kısaca inhertance sınıflardaki(yada üst sınıflardaki) nesneleri bir interface gibi oluşturup 
+istendiği yerde çağrılmasını sağlama işinin framework constrictor (yapıcılarına) bırakılmasıdır.
+
+
+ - Dependency Injection : 
+kısaca a sınıfının içinde b sınıfını yazmak yerine b sınıfı oluşturup a ya enjekte etmek 
+uygulayarak; bir sınıfının bağımlı olduğu nesneden bağımsız hareket edebilmesini sağlayabilir 
+ve kod üzerinde olası geliştirmelere karşın değişiklik yapma ihtiyacını ortadan kaldırabilirsiniz.
+Kolayca değişiklik yapıp hızlı tetst imkanı verir
+
+
+ - Aspect Oriented Programming (AOP)
+ - AOP - Aspect Oriented Programming : 
+Birbirinden farklı işlevler yürüten ancak kesişen davranışların birbirlerinden ayrışması metodolojisine AOP denilmektedir.
+Loglama
+Transaction Management
+Pooling
+Security → Güvenlik
+Caching → Kaynak Yönetimi
+Performans Ölçümü → kaynak yönetimi
+Exception Handling → Hata yönetimi
+Operations → İş kuralları
+AOP, yukarıda sıralanan birçok işlevin ayrı ayrı tasarlanarak sadece gerektiğinde uygulama ile ahenk içinde çalıştırılabilmesi yöntemidir. 
+Burada her uygulama birimi, Aspect olarak tasarlanmış herhangi bir modülü istediği zaman edinip kullanabilir
+
+
+SPRİNT BOOT 
+
+Spring Framework kullanarak uygulama geliştirirken xml dosyaları üzerinden konfigürasyon işlemlerini yapmaktayız. 
+Bu işlemler proje büyüdükçe vakit alabiliyor. Spring Boot ise bu vakit kaybını en aza indirmeyi planlayan bir başka Spring Freamework’üdür.
+Spring Boot sadece koda odaklanmayı sağlamayı amaçlamakta olup bizi xml dosyaları üzerindeki vakit kaybını ortadan kaldırır. 
+Xml dosyaları ile uğraşmadan Spring tabanlı uygulamaları hemen geliştirebileceğimiz Spring Boot ..
+
+
+ - Apache Tomcat : bu standartları uygulayan ve içerisinde web sunucusu yer alan bir Java uygulamasıdır. 
+
+ - Eclipse : bir ıdedir.
+
+ -Hibernate : bir ORM Firework’u , JDBC alternatifi ve daha kolay kullanım 
+
+MAVEN : yazılım proje yönetimi ve anlama aracıdır, web uygulama çatısıdır.
+Google tarafından desteklenen, dünya genelinde yazılımcılar tarafından katkı sağlanan açık kaynak kodlu web uygulama çatısıdır. 
+Javascript ile yazılan Angular, MVC prensiplerine sadık kalınarak tek sayfalık uygulamalar yazmayı mümkün kılmaktadır.
+Maven, proje nesne modeli (POM) kavramına dayanarak, bir projenin inşasını, raporlamasını ve belgelerini merkezi bir bilgi parçasından yönetebilir.
+ide bağımız ve proje rarlarını kendi hostundan direk indirmemize yardımcı olur .. güncel sürümleri kendi denetler .. 
+projemizi maven ile istediğimiz ide ye taşıyabilir , başka projelerde kullanabiliriz
+
+JPA, Java programlama dilinde Java sınıfları ile ilişkisel veritabanı tablolarını ilişkilendirmek için ortaya çıkmış bir standarttır. 
+Burada amaç sınıf değişkenleri ile tablonun kolonlarını eşleştirmek ve SQL yazmadan nesneler üzerinden doğrudan veritabanı işlemlerini yapmaktır. 
+Bu noktada JPA sadece bir standart ortaya koyar ve veri üzerinde kendisi bir işlem yapmaz. 
+Bunun için bu standartları implemente eden ayrı bir araca ihtiyaç vardır, 
+JPA implementasyonu yapan başlıca araçlar olarak Hibernate, TopLink, EclipseLink ve OpenJPA sayılabilir.
+
+
+ -Rest de temelinde HTTP protokolü üzerinden haberleşen bir mimari yaklaşımdır. Bu mimari yaklaşımı kullanan API'lara da Restful API olarak adlandırıyoruz. 
+Restful standardı daha eski ve katı kuralları olan SOAP servislere bir çözüm olarak geliştirilmiş ve tercih edilmiştir.
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

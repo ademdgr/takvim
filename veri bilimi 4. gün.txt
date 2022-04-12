@@ -1,0 +1,379 @@
+VERİ BİLİMİ 
+
+#kütüphaneleri import edelim
+import pandas as pd
+import matplotlib.pyplot as plt
+import numpy as np 
+from collections import Counter
+
+#python'da uyarıları kapatalım
+import warnings
+warnings.filterwarnings("ignore")
+
+#veriyi içeriye aktaralım
+veri = pd.read_csv("olimpiyatlar.csv")
+veri.head()
+
+print(df.to_string()) 
+İpucu: DataFrame'in tamamını yazdırmak için kullanın to_string().
+
+#veri hakkında genel bilgiler
+veri.info()
+
+#sutun isimleri 
+veri.columns
+
+#sütün ismi değiştirme / inplace=True demek değiştirdiğin alana yaz demek, 
+#bunu yazmazsak değiştirmiyor yeni sütün da oluşturmuyor
+
+veri.rename(columns={'ID' : 'id' ,
+                    'Name': 'İsim'},inplace=True)
+veri.head(2)
+
+#drop fonksiyonu ile sütünları çıkarma
+veri = veri.drop(["id","Games"],axis=1)
+veri.head(2)
+
+
+essiz_etkinlik = pd.unique(veri.Event) // Event altında kaç tane benzersiz etkinlik varsa onları birer keze indirdik
+print("eşsiz etkinlik sayısı : {}".format(len(essiz_etkinlik))) // indirdiğimiz etkinliklerin kaç tane oldunu yazdırdık
+essiz_etkinlik[:10] // ilk 10 etkinliği gördük 
+
+
+
+#kayıp veriyi doldurma 
+ortalamaya göre  : 
+
+
+# her bir etkinliği iteratif olarak dolaş
+# etkinlik özelinde boy ve kilo ortalamalırını hesapla
+# etkinlik özelinde kayıp boy ve kilo değerlerini etkinlik ortalamalarına eşleştir
+
+veri_gecici = veri.copy() # gerçek veriyi bozmamak için bir kopyasını oluşturduk
+
+
+boy_kilo_liste =["Height","Weight"]
+
+for e in essiz_etkinlik : #liste içerisinde dolaşacağım
+    #etkinlik filtresi oluşturalım 
+    etkinlik_filtre = veri_gecici.Event ==e
+    #veriyi etkinliğe göre filtreleyelim
+    veri_filtreli=veri_gecici[etkinlik_filtre]
+    
+    #boy ve kilo için etkinlik özelinde ortalamaları hesaplıyacağım 
+    
+    for s in boy_kilo_liste:
+        ortalama = np.round(np.mean(veri_filtreli[s]),2)
+        if ~np.isnan(ortalama):  #eğer etkinlik özelinde ortalama varsa 
+            veri_filtreli[s]=veri_filtreli[s].fillna(ortalama)
+        else : #eğer etkinlik özelinde ortalama varsa ortalamayı hesapla
+                tum_veri_ortalamasi =np.round(np.mean(veri[s]),2)
+                veri_filtreli[s]= veri_filtreli[s].fillna(tum_veri_ortalamasi)
+                
+ #etkinlik özelinde kayıp değerleri doldurulmuş olan veriyi , veri_gecicic ye eşitleyeceğim
+veri_gecici[etkinlik_filtre]=veri_filtreli
+
+#kayıp değerleri giderilmiş olan geçiçi veriyi gerçek veriye eşitle
+veri=veri_gecici.copy
+veri.info() 
+#boy ve kilo sütünlarında kayıp değer sayısına bakalım :
+
+# yaş ortalamasını dolduralım :
+yas_ortalamasi= np.round(np.mean(veri.yas),2)
+print("yas ortalaması : {} ".format(yas_ortalamasi))
+
+ver["yas"]}veri["yas"].fillna(yas_ortalamasi)
+veri.info
+
+
+madalya almayanalar :
+madalya_degiskeni=veri["Medal"]
+pd.isnull(madalya_degiskeni).sum()
+
+sadece madalya alanlar kalsın :
+madalya_deg_filt= ~pd.isnull(madalya_degiskeni)
+veri= veri[madalya_deg_filt]
+veri.head(5)
+
+
+çalışmayı kaydetme 
+
+veri.to_csv("olimpiyatlar_ilk_yari.csv",index=False)
+
+-----------------------------
+
+def plotHistogram(degisken):
+    plt.figure()
+    plt.hist(veri[degisken], bins=85,color="orange") // önce veri istiyor , aralık  ve renk verdik 
+    plt.xlabel(degisken)
+    plt.ylabel("Frekans")
+    plt.title("Veri Sıklığı - {}".format(degisken))
+    plt.show()
+
+///////
+
+sayisal_degisken=[ 'yas', 'boy', 'kilo',  'yil']
+for i in sayisal_degisken:
+    plotHistogram(i)
+
+
+///////
+
+veri.describe() 
+veriyi tanımlar / sadece sayısal verileri tanımlıyor
+
+
+/////////
+
+plt.boxplot(veri.yas)
+plt.title("Yaş Değişkeni için Kutu Grafiği")
+plt.xlabel("yas")
+plt.ylabel("değer")
+plt.show()
+
+
+/////////
+
+def plotBar(degisken, n=5):
+    veri_=veri[degisken]
+    veri_sayma=veri_.value_counts()   // değerlerin sayısını veriyor
+    veri_sayma=veri_sayma[:n]
+    plt.figure()
+    plt.bar(veri_sayma.index, veri_sayma, color = "orange")
+    plt.xticks(veri_sayma.index, veri_sayma.index.values)
+    plt.xticks(rotation=60)
+    plt.ylabel("Frekans")
+    plt.title("Veri sıklığı - {}".format(degisken))
+    plt.show()
+    print("{}:\n {}".format(degisken,veri_sayma))
+
+
+
+kategorik_degisken=["isim", "cinsiyet", "takim", "uok","sezon", "sehir", "spor", "etkinlik", "madalya"]
+for i in kategorik_degisken: 
+    plotBar(i)
+
+
+// forlardan sonra alt satırda içe doğru olmasına dikkat et 
+
+
+
+/////////////////
+
+
+erkek=veri[veri.cinsiyet=="M"]
+erkek.head(3)
+
+// erkekleri ayırdık 
+
+kadın=veri[veri.cinsiyet=="F"]
+kadın.head(3)
+
+// kadınları ayırdık
+
+plt.figure()
+
+plt.scatter(erkek.boy, erkek.kilo,alpha=0.9,label="Erkek",color="blue")
+plt.scatter(kadın.boy, kadın.kilo,alpha=0.9,label="Kadın",color="red")
+plt.xlabel("Boyyy")
+plt.ylabel("Kilomm")
+plt.title("Boy ve kilo Arasındaki İlişkiler ")
+plt.legend()
+plt.show()
+
+//////////////
+
+veri.loc[:,["yas","boy","kilo"]].corr()
+
+verinin bütün satırlarını ve yaş boy kilo sütünlarını aldım ve korelasyonlarına baktım 
+
+
+/////////////
+
+kategorik olanların korelasyonları için kategoriyi ayırıyoruz 
+
+pd.get_dummies ile dilimliyoruz.
+
+veri2=veri.copy()
+veri2=pd.get_dummies(veri2,columns=['Medal'])
+veri2.head(2)
+
+veri_gecici.loc[:,["yas","madalya_Bronze","madalya_Gold","madalya_Silver"]].corr()
+
+dilimleyip ayrı ayrı korelasyon baktık .. 
+
+
+////////////////
+
+veri_gecici[["takim","madalya_Bronze","madalya_Gold","madalya_Silver"]].groupby(["takim"],as_index=False).sum().sort_values(by="madalya_Gold",ascending=False)[:10]
+
+takim bazında gruplayıp en fazla alan ilk 10 yukardan aşağı gold madalya öncülüğünde sıralandı 
+
+
+///////////////////
+
+
+
+veri3=veri.pivot_table(index="Medal",columns='Gender',
+                       values=["Weight","Height","Age"],
+                       aggfunc={"Weight": np.mean,"Height": np.mean,"Age":[min,max,np.std]})
+
+veri3.head()
+
+
+////////////////
+
+
+
+##  aykırı değerler : 
+
+def anomaliTespiti(df,ozellik):
+    outlier_indices=[]
+    
+    for c in ozellik:
+        Q1=np.percentile(df[c],25)
+        Q3=np.percentile(df[c],75)
+    
+        IQR = Q3-Q1
+    
+    #aykırı değer için ek adım miktarı : 
+        outlier_step = 1.5*IQR
+    
+    # aykırı değeri ve bulunduğu indexi yazalım :
+        outlier_list_col=df[(df[c] < Q1 - outlier_step )| (df[c] > Q3 + outlier_step)].index
+    
+    #tespit ettiğimiz indexleri depola :
+        outlier_indices.extend(outlier_list_col)
+    
+    
+# eşsiz aykırı değerlleri bulalım : 
+    outlier_indices = Counter(outlier_indices)
+
+# eğer bir örnek v adet sütunda farklı değer ise bunu aykırı kabul edelim : 
+    multiplie_outliers= list(i for i, v in outlier_indices.items())
+
+    return multiplie_outliers
+
+veri_anomali= veri.loc[anomaliTespiti(veri,["Age","Height","Weight"])]
+veri_anomali.Sport.value_counts()
+
+veri_anomali
+
+veri.shape
+
+
+plt.figure()
+plt.bar(veri_anomali.spor.value_counts().index,veri_anomali.Sport.value_counts().values
+plt.xticks(rotation=30)
+plt.title("")
+plt.ylabel("")
+plt.grid(rue,alpha=0.5)
+plt.show()
+
+
+veri_gym= veri_anomali[veri_anomali.Sport== "Gymnasticsé]
+veri_gym
+
+
+veri_gym.Events.value_counts()
+
+veri_basket= veri_anomali[veri_anomali.Sport=="Basketball"]
+veri_basket
+
+veri_basket.Events.value_counts()
+
+
+
+/////////////
+
+veri_zaman= veri.copy()
+
+essiz_yıllar = veri_zaman.Year.unique()
+essiz_yıllar
+
+array oarak geliyor 
+
+sıralama yapalım : 
+
+sıralı_array = np.sort(veri_zaman.Year.unique())
+sıralı_array
+
+
+plt.figure()
+plt.scatter(range(len(sıralı_array)),sıralı_array)
+plt.grid(True)
+plt.ylabel("")
+plt.title("")
+plt.show
+
+sıralamasına göre ylları çizdirdi ..
+
+
+verileri datetime a çevirme : 
+
+tarih_saat_nesnesi=pd.to_datetime(veri_zaman["Year"],format ="½Y"]
+print (type (tarih_saat_nesnesi))
+tarih_saat-nesnesi.head()
+
+
+
+şimdi veriye sutun ekleyelim : 
+
+veri_zaman[ "tarih_saat" ]=tarih_saat-nesnesi
+veri_zaman.head()
+
+ 
+ana indexi tarih saate güncelleyelim :
+
+veri_zaman= veri_zaman.set.index("tarih_saat")
+ver_zaman.drop(["yıl"],axis=1,inplace=True)
+veri_zaman 
+
+
+periyodik_veri= veri_zaman.resample("2A").mean()
+periyodik_veri.head()
+
+2 yıl olarak veriyi değiştirdik kayıp verileri çıkaralım 
+
+periyodik_veri.dropna(axis=0 ,inplace=True)
+periyodik_veri.head()
+
+
+
+plt.figure ()
+periyodik_veri.plot()
+plt.title
+plt.xlabel
+plt.grid(true)
+plt.show()
+
+
+
+
+/////////
+
+veri_zaman=pd.get_dummies(veri_zaman,columns=["Medal"])
+veri_zaman.head()
+
+
+pv = veri_zaman.resample("2a").sum()
+
+pv=pv[~pv==0).any(axis=1)]
+pv.tail()
+
+
+
+plt.figure(9
+pv.loc[:,["medal.Bronz",madalyag, madalyagold ]].plotplt.title
+plt.ylabel
+plt.xlabel
+plt grid rure
+plt. show()
+
+
+//////////
+
+yaz=vz[vz.sezon=="summer"]
+kış = vz[vz.sezon=="winter"]
+kış.head()
+

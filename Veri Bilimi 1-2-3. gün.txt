@@ -1,0 +1,145 @@
+VERİ BİLİMİ 1. GÜN : 
+
+P21 Skills altındaki en önemli ve gerekli yeteneklerden biri
+
+Veri Maratonu Ön Koşul Eğitimler : Eğitmen
+Veri Bilimi İçin Python ve Tensorflow : Atıl Samancıoğlu
+Uygulamalarla SQL Öğreniyorum : Ömer Çolakoğlu
+Büyük Veriye Giriş : Talha Kılıç
+Python ile Makine Öğrenmesi .: Prof. Dr. Şadi Evren Şeker
+
+
+Ekstra Eğitim Önerileri :  Eğitmen
+Her Yönüyle SQL Server :  Ömer Çolakoğlu
+DevExpress Dashboard İle İş Zekası ve Veri Analitiği : Ömer Çolakoğlu
+Büyük Veri ve Uygulamaları :  Talha Kılıç
+R ile Veri Bilimine Giriş :  Özge Özmen
+Veri Modelleme : Murat Karabatak
+Uygulamalı Microsoft Power BI : Kubilay Taştutar
+
+
+Veri Türleri
+
+Niteliksel (Kalifatif: Qualitative) ya da Kategorik (Categorical) Veriler
+• Sırasız (Saç Rengi, Göz Rengi, Kan Grubu, vb.) 
+• Sıralı (Eğitim Durumu, Akademik Unvan, vb.)
+Niceliksel (Kantifatif: Quantitative) Veriler
+• Sürekli (Yaş, Sıcaklık, vb.) 
+• Ayrık ya da Aralıklı (Çocuk Sayısı, Kaza Sayısı, Ceza Sayısı, vb.)
+
+
+Veri (Ölçüm) Seviyeleri
+
+Nominal Veriler (Nom: Name)
+• İkilik (Binary veya Boolean) (Var/Yok, Kadın/Erkek, Hasta/Sağlıklı, vb.)
+• İkiden Çok Kategorili (Medeni Durum, Irk, Şehir, İsim, vb.)
+Ordinal Veriler (Ord: Order)
+• Sıralı Kategorik Veriler (Eğitim Düzeyi, Rütbe, Akademik Unvan, Gelişmişlik Derecesi, Sosyoekonomik Ölçek Değeri, vb.)
+Aralık (Interval) Tipi Veriler
+• Sıralı sayısal veriler (Santigrat veya Fahrenheit Cinsinden Sıcaklık, Zaman, 
+vb.)
+Oransal/Rasyo (Ratio) Veriler
+• Belirli bir referansa göre oranlı sayısal veriler (Mutlak Sıcaklık, Bağıl 
+Nem, Desibel Cinsinden Sinyal Şiddeti, Richter Ölçeğine Göre Deprem 
+Şiddeti, vb.)
+
+
+mean : ortalama 
+mod  . tepe değeri : en çok bulunan değer 
+medyan : ortanca 
+
+ 
+
+Çarpıklık (Skewness) ve Basıklık (Kurtosis)
+Doğruluk (Accuracy) ve Keskinlik (Precision)
+
+
+KIRMIZIDurKapalıTehlikeSıcakYüksek BasınçOksijenSığPara Kaybı / ZararGenelde olumsuz unsurları belirtmek ve uyarı amacıyla
+YEŞİLAçıkBitkiKarbonHareketPara
+MAVİSerin / Soğuk güvenliDerinNitrojen
+TURUNCU ve SARIKademeli Olarak Dur / Uyarı vb.Genelde olumsuz unsurlara yakınsamayı belirtmek ve uyarı amacıyla
+PEMBE Dişi
+Gri kir
+
+
+
+grafik türleri : 
+Sütun veya Çubuk Grafiği (Bar Graph)
+    dikey / yatay / Yan Yana Toplamlı Yatay / Merkez Eksenli 
+Çizgi Grafiği (Line Graph)
+Alan Grafiği (Area Plot)
+Saçılım Grafiği (Scatter Plot)
+Isı Haritası (Heat Map)
+Pasta Grafiği (Pie Chart) ve  Halka Grafiği (Doughnut Chart)
+Yarım Halka Grafiği (Semi Doughnut Chart)
+Güneş Işığı veya Güneş  Yanığı Grafiği (Sunburst Graph)
+Ağaç Haritası (Treemap)
+Kabarcık Grafiği (Bubble Chart)
+‘Kutu’ veya Kutu ve Bıyık’ Grafiği (Box Plot; Box and Whisker Plot)
+Keman veya Yaprak Grafiği (Violin Plot)
+Yağmur Bulutu Grafiği (Raincloud Plot)
+Eğim Grafiği (Slopegraph)
+Bisiklet Tekeri Diyagramı (Chord Diagram)
+Alüvyal Diyagram (Aluvial Diagram) veya SankeyDiyagramı (SankeyDiagram)
+Çağlayan Diyagramı (Waterfall Diagram)
+Radar Grafiği (Radar Plot) veya Örümcek Ağı Diyagramı (Spider Web Diagram)
+Venn Şeması veya Diyagramı (VennDiagram)
+Mum veya Şamdan Grafiği  (Candlestick Graph)
+Gül Diyagramı (Nightingale Rose Diagram)
+Kelime veya Sözcük Bulutu (Word Cloud)
+Koroplet Harita (Choropleth Map)
+
+
+
+
+R.O.C. Eğrisi
+
+Maliyet Fonksiyonu: cost 
+
+Gradyant : bir sonraki tahmin için ne kadar hızlı değişim yapayım 
+
+
+---------------------------------------------------------
+
+Regresyon Analizi
+
+‘Overfitting’ / ‘Underfitting’
+
+Regülarizasyon : 
+   Karelerin Artık Toplamı (Residual Sum of Squares – RSS)
+   Ridge (L2 norm)
+   Lasso (L1 norm) 
+   Elastic Net
+
+
+Normalizasyon – Ölçekleme - Standardizasyon : 
+   Z-score 
+   Max - min stand
+   ondalık normalizasyon 
+
+
+Boyut İndirgeme :
+ Faktor Analizi (Factor Analysis) :,
+    Keşfedici/Keşifsel/Açımlayıcı Faktör Analizi (Exploratory Factor Analysis - EFA)
+    Doğrulayıcı Faktor Analizi (Confirmatory Factor Analysis -CFA)
+ Temel Bileşen Analizi (Principal Component Analysis – PCA)
+ Lineer Diskriminant Analizi (Linear Discriminant Analysis - LDA)
+ t-Dağıtılmış Stokastik Komşu Gömme (t-distributed Stochastic Neighbor Embedding – t-SNE)
+ Öznitelik Seçimi
+
+
+k-means Clustering
+DBScan
+Mean Shift Clustering
+Hierarchical Clustering (Hiyerarşik Öbekleme)
+Expectation–Maximization (EM)  
+Clustering using Gaussian Mixture Models (GMM)
+Quantum Gaussian Mixture Models (QGMM)
+k-Nearest Neighbors (k En Yakın Komşular)
+Destek Vektör Makinesi (Support Vector Machine - SVM)
+k-D Tree
+Karar Ağacı
+Perseptron
+
+
+---------------------------------

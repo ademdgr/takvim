@@ -1,0 +1,124 @@
+# bir kolonda boş olanları blup yazdırma 
+
+mask = False
+for Sutun  in data.columns: 
+    mask = mask | data[Sutun].isnull()
+dfnulls = data[mask]
+
+print (dfnulls)
+
+----
+
+# boş bulduğumuzyere yazdırma :
+
+data["Sutun"].fillna(Neyle_dolduracaksak, inplace = True)
+
+----
+
+#İstediğimiz sütunu yazdırma:
+
+print(data.loc[[313]])
+
+
+-----
+
+# sütunu float yerine int olarak değiştireceğiz
+
+data.Sutun = data.Sutun.apply(int)
+
+-----
+
+# her takım tarafından her yıl harcanan miktarı her birini ayrı ayrı gösteriyor 
+
+teams = data.Team.unique()
+for team in teams:
+    data1 = data[data['Team'] == team].groupby('Year')['Amount'].sum()
+    fig = px.line(data1, x = data1.index, y = 'Amount', title = f"Amount spent by {team}", text=data1.index)
+    fig.update_traces(textposition="top right")
+    fig.show()
+
+--------
+
+# bir sutundaki toplamda kaç farklı veri var onu yazıdırıyor
+
+print(f"Dataset contains data of \033[1m{dataset.Role.unique().size}\033[0m Roles")
+dataset.Role.unique()
+
+
+# sonuç : Dataset contains data of 4 Roles
+          array(['Batsman', 'All-Rounder', 'Bowler', 'Wicket Keeper'], dtype=object)
+
+
+--------
+
+# bir sütündaki farklı verilerin isimlerini getiriyor :
+
+dataset['Sutun isimi'].unique()
+
+---------
+
+
+# Line Chart of different teams for comparision
+# Tek bir grafikte line göstermek
+
+data = pd.DataFrame(dataset.groupby(['Team', 'Year'])['Amount'].sum()).reset_index()
+fig = px.line(data, x='Year', y='Amount', color='Team', symbol='Team')
+fig.update_layout(title_text = "Overall comparision of different countries")
+fig.show()
+
+-------
+
+# her yılki toplam gider grafiği 
+
+data = dataset.groupby('Year')['Amount'].sum()
+fig = px.line(data, x = data.index, y = 'Amount', title = "Overall Expense Each year", text=data.index)
+fig.update_traces(textposition="top right")
+fig.show()
+
+-----------
+
+# Most Expensive Player Each Year
+
+data = []
+for i in sorted(dataset.Year.unique()):
+    df = pd.DataFrame(dataset.groupby('Year').get_group(i))
+    df = df[df['Amount'] == df.Amount.max()]
+    data.append([i, np.array(df["Player"]), np.array(df["Amount"])[0], np.array(df["Team"])[0]])
+data = pd.DataFrame(data, columns=["Year", "Players", "Amount", "Team"])
+fig = px.line(data, x = data.Year, y = data.Amount, title = "Most Expensive Player Each year", text=data.Players)
+fig.update_traces(textposition="top right")
+fig.show()
+fig = go.Figure(data=[go.Table(header=dict(values=['Year', 'Player','Team', 'Amount']), cells=dict(values=[data.Year, data.Players, data.Team, data.Amount]))])
+fig.show()
+
+
+
+--------
+
+
+# Role Göre Oyuncuya Harcanan Toplam Tutar
+
+roles = dataset.Role.unique()
+for role in roles:
+    data = dataset[dataset['Role'] == role].groupby('Year')['Amount'].sum()
+    fig = px.line(data, x = data.index, y = 'Amount', title = f"Total Amount Spent on {role}'s", text=data.index)
+    fig.update_traces(textposition="top right")
+    fig.show()
+
+-------------
+
+# Total Number of Players Sold Each Year Based on Role
+# Role Dayalı Her Yıl Satılan Toplam Oyuncu Sayısı  
+her yıl için ayrı grafik verir 
+
+
+years = dataset.Year.unique()
+for year in sorted(years):
+    data = dataset[dataset['Year'] == year]
+    fig = px.histogram(data, x="Role", title = f"Count Plot Based on role for {year}")
+    fig.show()
+
+
+
+
+

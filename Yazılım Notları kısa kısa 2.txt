@@ -1,0 +1,136 @@
+30 aralık 2021
+
+tek değer veya çok değer alabilir :
+let person = "John Doe";
+let person = {firstName:"John", lastName:"Doe", age:50, eyeColor:"blue"};
+
+-------------------------------------------------------------------------
+Bir nesnenin özelliğine erişmek için sözdizimi şöyledir:
+objectName.property      // person.age
+veya
+objectName["property"]   // person["age"]
+veya
+objectName[expression]   // x = "age"; person[x]
+
+-------------------------------------------------------------------------
+//for döngüsü ile nesnenin içeriğini yazdırmak :,
+
+<p id="demo"></p>
+<script>
+const person = {
+  fname:"John",
+  lname:"Doe",
+  age:25
+}; 
+
+let txt = "";
+for (let x in person) {
+  txt += person[x] + " ";
+}
+
+document.getElementById("demo").innerHTML = txt;
+</script>
+
+-------------------------------------------------------------------------
+
+Var olan bir nesneye basitçe bir değer vererek yeni özellikler ekleyebilirsiniz.
+person.nationality = "English"; // nationality : English olarak nesnenin özellikleri olarak eklendi
+delete person.age; // delete person["age"]; // age silindi , istek yapılırsa undefined dönüyor
+-------------------------------------------------------------------------
+Nokta gösterimini veya köşeli ayraç gösterimini kullanarak iç içe nesnelere erişebilirsiniz:
+
+Örnek
+myObj.cars.car2; //  myObj.cars["car2"]; //  myObj["cars"]["car2"]; //
+
+veya böyle :
+let p1 = "cars";
+let p2 = "car2";
+myObj[p1][p2];
+
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>JavaScript Objects</h2>
+<p>Access nested objects:</p>
+
+<p id="demo"></p>
+
+<script>
+const myObj = {
+  name: "John",
+  age: 30,
+  cars: {
+  car1: "Ford",
+  car2: "BMW",
+  car3: "Fiat"
+  }
+}
+document.getElementById("demo").innerHTML = myObj.cars.car2;
+</script>
+
+</body>
+</html>
+
+-------------------------------------------------------------------------
+
+<!DOCTYPE html>
+<html>
+<body>
+
+<h2>Nested JavaScript Objects and Arrays.</h2>
+<p id="demo"></p>
+
+<script>
+let x = "";
+const myObj = {
+  name: "John",
+  age: 30,
+  cars: [
+    {name:"Ford", models:["Fiesta", "Focus", "Mustang"]},
+    {name:"BMW", models:["320", "X3", "X5"]},
+    {name:"Fiat", models:["500", "Panda"]}
+  ]
+}
+
+for (let i in myObj.cars) {
+  x += "<h2>" + myObj.cars[i].name + "</h2>";
+  for (let j in myObj.cars[i].models) {
+    x += myObj.cars[i].models[j] + "<br>";
+  }
+}
+
+document.getElementById("demo").innerHTML = x;
+</script>
+
+</body>
+</html>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

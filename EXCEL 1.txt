@@ -1,0 +1,90 @@
+EXCEL :
+
+CTRL + H : DEĞİŞTİR
+
+görünüm de bölmeleri dondur 
+
+biçimlendirmeden doldur
+
+aşağıya çekilince sabit yeri alması için:
+kdv gibi tek hüceyi kullanmak gib
+
+kdv li : =E3*(1+$N$2)
+
+=$A3*B$2   burada a yı sabitleyip sayıyı artırırken b yi artırıp 2 yi sabitliyor 
+
+dolar işareti için : altgr + 4 e basıyoruz 
+
+ctrl + shift + L : filtreleme için 
+
+alt toplam
+
+=EĞER(Q2>P2;"tam";EĞER(Q2=P2;"arı";"düşük"))
+
+=EĞER(R2="tam";Q2*1,15;EĞER(R2="arı";Q2*1,1;Q2*0,9))
+
+=EĞER(F2<25;"F";EĞER(F2<45;"D";EĞER(F2<70;"C";EĞER(F2<85;"B";"A"))))
+
+ctrl + yönler en sağ en son gider
+
+ctrl +shift aşağı / sağ : seçmek için 
+
+=ETOPLA(M:M;"EWALLET";J:J)
+=ETOPLA(M:M;S10;J:J)
+
+GERSAY EGERORTALAMA
+
+BİRDEN FAZLA KRİTER : ÇOKEĞERTOPLA
+ÇOKEĞER ORTALAMA 
+
+
+=KAÇINCI(A52;Worksheet!A:A;0)
+=İNDİS(Worksheet!F:F;D:D)
+^# tek sütünde sağdan soldan istediğimiz aranıp getirilebilir
+
+= düşeyara 
+
+=INDIS(E:E;KAÇINCI(M11;H:H;0))
+
+=İNDİS(G:G;KAÇINCI(S2;A:A;0)) // İNDİSİ AL NEREDEN , KAÇINCI SIRA ( ŞUARADAKİNİ AL BU DİZİDE ARA )
+
+ctrl shift virgül / nokta
+
+
+metne çevir / şimdi / bugün
+
+
+
+DÜŞEYARA SADECE SAĞA DOĞRU ÇALIŞIR // STRİNG OR İNT FARKEDER , FARKLI İSE ÇALIŞMAZ 
+* SELECT GİBİ ÇALIŞIR
+
+
+SOLA DOĞRU ARAMAK GEREKİYORSA : İNDİS + KAÇINCI DİYORUZ 
+=İNDİS(E:E;KAÇINCI(S6;F:F;0))
+
+
+ÇOKEĞERSAY İLE ÖLÇÜTLERLE FİLTRELEME YAPIYORUZ  
+ÇOKETOPLA : FİLTRELERLE O ÖLÇÜTÜ TOPLATIYORUZ 
+
+EĞER : MANTIKSAL SINAMA 
+
+kaydır : =KAYDIR(X9;KAÇINCI(W22;X10:X14;0);KAÇINCI(X22;Y10:AA10;0);1;1)
+
+benzersiz 
+
+sırala  + benzersiz : sıralayarak tek halke getiriyor
+
+filter : =FİLTRE(A:Q;Q:Q=7)
+
+=ÇOKETOPLA(J:J;M:M;M3;Q:Q;Q3)
+ ÇOKETOPLA(J:J;M:M;M2;Q:Q;Q2)   sabitlemek için dolar işareti 
+
+çokeğermak / min / ortalama 
+
+
+çok eğer : 
+
+dolaylı 
+
+koşullu biçimlendirme
+

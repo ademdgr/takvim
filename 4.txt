@@ -1,0 +1,48 @@
+df.sample(3) her hangi üçünü göster
+
+----------
+
+
+
+Aşırı dönemleri çalıştırmaktan kaçınmak için genellikle komut dosyalarımın çoğuna erken durdurucu bir geri arama da dahil ederim. Burada sadece öğrenen başkaları için de faydalı olabilir.
+
+from keras.callbacks import EarlyStopping
+
+earlystopper = EarlyStopping(monitor='val_loss', min_delta=0,
+                             patience=1, verbose=1, mode='auto')
+
+# Fit the model
+history = model.fit_generator(datagen.flow(X_train,Y_train, batch_size=batch_size),
+                              epochs = epochs, validation_data = (X_val,Y_val),
+                              verbose = 2, steps_per_epoch=X_train.shape[0] // batch_size
+                              , callbacks=[learning_rate_reduction, earlystopper])
+
+
+-----------------------------
+
+İkincisi, bu deftere ilk kez bakıyorsanız, muhtemelen bazı hatalarla karşılaşacaksınız. Sonra, onları nasıl çözeceğimi göstereceğim. Herhangi bir şüpheniz veya sorunuz varsa, sormaktan çekinmeyin!
+TensorFlow, .fit_generatoryöntemi kullanımdan kaldırma sürecindedir. .fitArtık veri büyütmeyi destekleyen yöntemi kullanmalısınız . Bu nedenle, olarak değiştirmeniz model.fit_generatorgerekir model.fit.
+
+Şöyle görünmelidir:
+
+history = model.fit(datagen.flow(X_train,Y_train, batch_size=batch_size),
+                              epochs = epochs, 
+                              validation_data = (X_val,Y_val),
+                              verbose = 2, 
+                              steps_per_epoch=X_train.shape[0] // batch_size, 
+                              callbacks=[learning_rate_reduction])
+Kitaplık güncellemesi nedeniyle, tüm 'acc'anahtar kelimeler artık 'accuracy', bu nedenle bu bölüm şöyle görünmelidir:
+
+ax[1].plot(history.history['accuracy'], color='b', label="Training accuracy")
+ax[1].plot(history.history['val_accuracy'], color='r',label="Validation accuracy")
+monitor='val_acc'Son olarak , şunun gibi değiştirmelisiniz monitor="val_loss":
+
+learning_rate_reduction = ReduceLROnPlateau(monitor="val_loss", 
+                                            patience=3, 
+                                            verbose=1, 
+                                            factor=0.5, 
+                                            min_lr=0.00001)
+
+
+
+-------------------------

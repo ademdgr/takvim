@@ -1,0 +1,419 @@
+GRAFİK DEĞİŞKENLERİ : 
+
+# ikiye ikili grafik oluşturma : 
+
+
+import matplotlib.pyplot as plt
+import numpy as np
+
+fig, ax = plt.subplots(2, 2)
+x = np.linspace(0, 8, 1000)
+
+ax[0, 0].plot(x, np.sin(x), 'g') #row=0, col=0
+ax[1, 0].plot(x, np.tan(x), 'k') #row=1, col=0
+ax[0, 1].plot(range(100), 'b') #row=0, col=1
+ax[1, 1].plot(x, np.cos(x), 'r') #row=1, col=1
+fig.show()
+
+
+-----------------------------------------
+#kurulum 
+
+import matplotlib.pyplot as plt
+%matplotlib inline
+
+#gösterim
+
+figura, ejes = ptl.subplots()
+plt.show()
+
+veya 
+
+figura = plt.figure()
+eje = fig.add_subplot(111)
+
+---
+sharex ve sharey
+
+nrows=2, ncols = 3 
+
+
+----
+
+figura, ejes = plt.subplots(1, 3, squeeze=True)
+
+plt.show()
+
+#1 e  3 sutunlu  grafik 
+
+---------
+
+# bilmiyorum 
+figura, ejes = plt.subplots(2, 3, subplot_kw={'projection':"polar"})
+
+plt.show()
+
+
+# sütün derinlikleri 
+
+figura, ejes = plt.subplots( 4, 1, sharex=True, sharey=False, 
+                             gridspec_kw=dict(height_ratios=[3,2,1,1])
+                            )
+
+figura.suptitle('node', fontsize=20)
+
+ejes[0].plot(range(10),'ro-') 
+ejes[1].plot(range(10),'bo-') 
+ejes[2].plot(range(10),'go-') 
+ejes[3].plot(range(10),'mo-') 
+
+plt.show()
+
+
+# benzeri sütü derinlikleri : 
+
+figura, ejes = plt.subplots( 4, 2, sharex=True, sharey=False, 
+                             gridspec_kw={'height_ratios':[3,2,1,1]}
+                            )
+
+figura.suptitle('node', fontsize=20)
+
+ejes[0,0].plot(range(10),'ro-') 
+ejes[1,0].plot(range(10),'bo-') 
+ejes[2,0].plot(range(10),'go-') 
+ejes[3,0].plot(range(10),'mo-') 
+
+plt.show()
+
+
+# graik genişliği ayaralama 
+
+figura, ejes = plt.subplots(nrows=2, ncols=3)
+figura.set_size_inches(10, 4, forward=True)
+
+plt.show()
+
+# veya böyle : 
+
+figura, ejes = plt.subplots(nrows=2, ncols=3, figsize=(10, 4))
+
+plt.show()
+
+
+-------
+
+
+# bilmiyorum 
+
+figura, ejes = plt.subplots(2, 3, constrained_layout=True)
+
+
+# bilmiyorum 
+
+figura, ejes = plt.subplots(nrows=2, ncols=3, num=10, clear=True)
+
+
+
+-----------   
+
+
+^değer atama : 
+figura, ejes = plt.subplots()
+ventas = [34, 67, 10, 37, 40]
+
+ejes.plot(ventas)
+
+plt.show() 
+
+
+
+# veya  
+
+
+figura, ejes = plt.subplots()
+meses = [1, 2, 3, 4, 5]
+ventas = [34, 67, 10, 37, 40]
+
+ejes.plot(meses, ventas)
+
+plt.show()
+
+
+# veya  : 
+
+
+figura, ejes = plt.subplots()
+meses = [1, 2, 3, 4, 5]
+
+ventas1 = [34, 67, 10, 37, 40]
+ventas2 = [24, 52, 17, 26, 58]
+
+ejes.plot(meses, ventas1, meses, ventas2)
+
+plt.show()
+
+
+#  renk vermek   : 
+
+
+figura, ejes = plt.subplots()
+meses = [1, 2, 3, 4, 5]
+
+ventas1 = [34, 67, 10, 37, 40]
+ventas2 = [24, 52, 17, 26, 58]
+
+ejes.plot(meses, ventas1, 'red', meses, ventas2, 'green')
+
+plt.show()
+
+
+#   çizgiden farklı çizgiler:
+
+figura, ejes = plt.subplots()
+meses = [1, 2, 3, 4, 5]
+
+ventas1 = [34, 67, 10, 37, 40]
+ventas2 = [24, 52, 17, 26, 58]
+
+ejes.plot(meses, ventas1, 'r^-.', meses, ventas2, 'go--')
+
+plt.show()
+
+
+# çizgilerin tamamı : 
+
+'.'	nokta işaretçisi
+','	piksel işaretleyici
+'o'	daire işaretleyici
+'v'	üçgen_düşük işaretçi
+'^'	üçgen_yukarı işaretçisi
+'<'	üçgen_sol işaretçi
+'>'	üçgen_sağ işaretleyici
+'1'	tri_down işaretçisi
+'2'	tri_up işaretçisi
+'3'	tri_left işaretçisi
+'4'	tri_right işaretçisi
+'8'	sekizgen işaretleyici
+'s'	kare işaretleyici
+'p'	beşgen işaretleyici
+'P'	artı (dolu) işaretleyici
+'*'	yıldız işaretleyici
+'h'	altıgen1işaretçi
+'H'	hexagon2marker
+'+'	artı işaretleyici
+'x'	x işaretleyici
+'X'	x (dolu) işaretleyici
+'D'	elmas işaretleyici
+'d'	ince elmas işaretleyici
+'|'	vline işaretçisi
+'_'	çizgi işaretleyici
+
+
+
+
+'-'	düz çizgi stili
+'--'	kesikli çizgi stili
+'-.'	kısa çizgi stili
+':'	noktalı çizgi stili
+
+
+
+
+------
+
+
+# scatter  : 
+
+## Inicializamos las figuras
+figura, ejes = plt.subplots()
+
+## Asignamos valores
+meses = [1, 2, 3, 4, 5]         # eje X
+ventas = [34, 67, 10, 37, 40]   # eje Y
+
+## Pintamos el gráfico
+ejes.scatter(meses, ventas)        
+ 
+## Mostramos el gráfico
+plt.show()
+
+
+### ikili scatter içiçe : 
+
+figura, ejes = plt.subplots()
+
+valores_x = np.random.randn(100)   # eje X
+valores_y = np.random.randn(100)   # eje Y
+
+valores_x2 = np.random.randn(100)   # eje X
+valores_y2 = np.random.randn(100)   # eje Y
+
+ejes.scatter(valores_x,  valores_y)
+ejes.scatter(valores_x2, valores_y2)
+
+plt.show() 
+
+
+
+-------------------
+# scatterrin tamamı :
+
+
+matplotlib.pyplot.scatter(x, y, s=None, c=None, 
+marker=None, cmap=None, norm=None, vmin=None, 
+vmax=None, alpha=None, linewidths=None, edgecolors=None, 
+plotnonfinite=False, data=None, **kwargs)
+
+
+----------------------
+
+
+Boyut veya "s"
+# 
+
+
+## Asignamos valores
+valores_x = np.random.randn(10)     # eje X
+valores_y = np.random.randn(10)     # eje Y
+
+tamanio1  = [(n+1)**2 for n in range(10)]   # tamaños para los valores 1
+
+valores_x2 = np.random.randn(15)    # eje X
+valores_y2 = np.random.randn(15)    # eje Y
+
+tamanio2   = [(n+1)**2 for n in range(15)]  # tamaños para los valores 2
+
+
+## Inicializamos las figuras
+figura, ejes = plt.subplots()
+
+## Pintamos el gráfico
+ejes.scatter(valores_x,  valores_y,  s=tamanio1)
+ejes.scatter(valores_x2, valores_y2, s=tamanio2)
+ 
+## Mostramos el gráfico
+plt.show()
+
+
+
+
+# Renk veya 'c': 
+
+s=tamanio1, c='green'
+
+
+# veya bu şekilde : 
+
+figura, ejes = plt.subplots()
+
+valores_x = [1, 2, 3, 4, 5]
+valores_y = [2, 4, 6, 8, 10]
+tamanio   = [10, 30, 80, 140, 200]
+colores   = [1, 3, 6, 9, 12]
+
+ejes.scatter(valores_x,  valores_y,  s=tamanio, c=colores)
+plt.show()
+
+
+#
+
+veya böyle : 
+colores   = np.array([[255,0,0], [0,255,0], [0,0,255], [70,20,10], [6,31,95]])
+
+
+
+#
+
+İşaretleyici 'işaretleyici': 
+
+s=250, marker='*'   // s=250, marker='D'
+
+--------
+
+
+ # Renk haritası 'cmap':
+
+
+renklere : 
+sonbahar	sıralı artan kırmızı-turuncu-sarı tonları.
+kemik	Röntgen filmini taklit etmek için mavi bir tonla sıralı olarak artan siyah beyaz renk haritası.
+serin	doğrusal olarak azalan camgöbeği-macenta tonları.
+bakır	siyah bakırın sıralı yükselen tonları.
+bayrak	yinelenen kırmızı-beyaz-mavi-siyah desen (uç noktalarda döngüsel değil).
+gri	gri skala beyazdan siyaha doğrusal sıralı artış.
+Sıcak	Artan sıcaklıklarda bir nesnenin siyah cisim radyasyonunu taklit etmek için sıralı siyah-kırmızı-sarı-beyaz.
+hsv	HSV renk uzayındaki ton bileşeninin değiştirilmesiyle oluşturulan döngüsel kırmızı-sarı-yeşil-camgöbeği-mavi-macenta-kırmızı.
+cehennem	algısal olarak tek biçimli siyah-kırmızı-sarı tonları.
+jet	koyu uç noktaları olan bir spektral harita, mavi-camgöbeği-sarı-kırmızı; NCSA sıvı jet simülasyonuna dayalıdır.
+magma	algısal olarak tek biçimli siyah-kırmızı-beyaz tonları.
+pembe	Fotoğrafları sepya tonunda renklendirmek için tasarlanmış siyah-pembe-beyaz pastel renklerde sıralı hilal.
+plazma	algısal olarak tek biçimli mavi-kırmızı-sarı tonları.
+prizma	yinelenen desen kırmızı-sarı-yeşil-mavi-mor -…-yeşil (uç noktalarda döngüsel değil).
+Bahar	Eflatun sarısının doğrusal artan tonları.
+yaz	doğrusal olarak artan sıralı yeşil-sarı tonları.
+virüs	algısal olarak tek biçimli mavi-yeşil-sarı tonları.
+kış mevsimi	doğrusal olarak artan mavi-yeşil tonları.
+
+
+autumn	tonos secuenciales que aumentan linealmente de rojo-naranja-amarillo.
+bone	Mapa de color blanco y negro en aumento secuencial con un matiz de azul, para emular una película de rayos X.
+cool	tonos de cian-magenta que disminuyen linealmente.
+copper	tonos crecientes secuenciales de cobre negro.
+flag	patrón repetitivo rojo-blanco-azul-negro (no cíclico en los puntos finales).
+gray	escala de grises de blanco a negro de aumento lineal secuencial.
+hot	secuencial negro-rojo-amarillo-blanco, para emular la radiación del cuerpo negro de un objeto a temperaturas crecientes.
+hsv	cíclico rojo-amarillo-verde-cian-azul-magenta-rojo, formado al cambiar el componente de tono en el espacio de color HSV.
+inferno	tonos perceptualmente uniformes de negro-rojo-amarillo.
+jet	un mapa espectral con puntos finales oscuros, azul-cian-amarillo-rojo; basado en una simulación de chorro de fluido de NCSA..
+magma	tonos perceptualmente uniformes de negro-rojo-blanco.
+pink	Creciente secuencial en colores pastel negro-rosa-blanco, destinado a la coloración de fotografías en tono sepia.
+plasma	tonos perceptualmente uniformes de azul-rojo-amarillo.
+prism	patrón repetitivo rojo-amarillo-verde-azul-violeta -…- verde (no cíclico en los puntos finales).
+spring	tonos de amarillo magenta que aumentan linealmente.
+summer	tonos secuenciales de verde-amarillo que aumentan linealmente.
+viridis	tonos perceptualmente uniformes de azul-verde-amarillo.
+winter	tonos de azul verdoso que aumentan linealmente.
+
+
+
+------------
+
+# normalleştirme : 
+
+
+figura, ejes = plt.subplots()
+colores   = [0.1, 0.3, 0.6, 0.9, 0.12]
+normalize = matplotlib.colors.Normalize(vmin=-1, vmax=1)
+ejes.scatter(valores_x,  valores_y, c=colores, norm=normalize)
+plt.show() 
+
+
+
+
+-----------
+^#
+
+vmin ve vmax:
+
+alfa
+
+linewidths , linecolors / edgecolors
+
+
+
+#   plotnonfinite  : boş noktalara da renk vermek için kullanılır 
+
+
+colores   = [0.1, np.nan, 0.2, np.nan, 0.12]
+
+colormap = mcol.LinearSegmentedColormap.from_list("varcol", ["b", "r"])
+
+colormap.set_bad('orange')
+
+plt.scatter(valores_x, valores_y, c=colores, cmap=colormap, plotnonfinite=True)
+
+plt.show()
+
+
+
+--------------------------------

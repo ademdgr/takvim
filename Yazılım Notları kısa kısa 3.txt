@@ -1,0 +1,260 @@
+ANGULAR İLE WEB PROGRAMCILIĞI :
+
+KURULUM :
+
+NODE.JS (npm)(PAKET YÖNETİMİ + WEB KURULUM) / VİSUAL STUDİO CODE (EDİTÖR)
+cmd >> npm install -g typescript (global olarak yüklüyor )
+cmd >> npm install -g @angular/cli
+cmd >> tsc intro.ts (intro.ts yi intro.js şeklinde yeniden oluşturuyor )
+cmd >> npm install -g nodemon (kaydettikten sonra çalışmasını sağlıyor .. anlık izliyor )
+terminal>> nodemon intro.js yazarsak node olarak gözüküp çalışıyor 
+
+---------------------------------------------------------------
+---------------------------------------------------------------
+
+* Veri Tipleri: 
+
+Number-String-Boolean-Array-Tuple-Enum-Any-Void-Null-Undefined
+tip güvenli olduğu için her value ya tipinin atama yapıyoruz :
+
+let sayi:number
+sayi=10
+sayi=10.4
+
+let yazi:string
+yazi="adem"
+
+let dogruMu:boolean
+dogruMu=true
+
+let diziler:number[]=[1,2,3] // sdc sayılar
+let diziler2:Array=[1,2,"adem"]
+let diziler3:[number,string]=[2,"adem"]
+
+enum Ofisler {Ankara, İzmir, Konya, İstanbul}
+enum ofis : Ofisler = Ofisler.Konya  // burada Ofisler adında bir type oluşturduk ve sonra o tipi kullandık
+
+
+let notSure : any = "ankara" // any ileher şeyi alabilir 
+deger=2
+deger={}
+let notSure : void = undefined // void ile retun kullanan fonk kullanılamaz 
+let yas:number; // deger atanmadı değer tipte kullanılır - null yani boş  olarak değerlendir
+
+class  Musteri[]=[] // referans tipler için boş demektir 
+
+
+---------------------------------------------------------------
+---------------------------------------------------------------
+
+* Functions :
+
+function topla(x:number,y:number){ // normal typescript fonksiyonu 
+return x+y;
+}
+console.log(topla(5,6))
+
+
+function topla(x:number,y:number=4){ // default değer : y verilmez ise y =4 olarak alır
+return x+y;
+}
+console.log(topla(5)) // sonuç 5+4 
+console.log(topla(5,6)) // sonuç 5+6 // default değeri ezmiş 
+
+
+function topla(x:number,y?:number){ // undefined değer : y verilmez ise sdc x i toplar ama altta if cümlesi olmalı 
+if(y){
+return x+y;
+}
+return x;
+}
+console.log(topla(5)) // sonuç 5
+console.log(topla(5,3)) // sonuç 8
+
+//default yada undefined değerlerin en sonda olmasına dikkat et .. 
+// program sıreayla okuduğu için hangi değer olduğunu bilemez 
+
+ 
+// rest parametreler : aynı tipte alınacak parametre sayısısbelli değil ise kullanılabilir 
+
+function daveEt(ilkDavetli: string , ... digerleri:string[]):string{
+return: ilkDavetli+" "+ digerleri.join(" ");
+}
+console.log(davetEt("adem","meryem","t"))
+
+// başka bir yazımı 
+function daveEt( ... digerleri:string[]):string{
+return: ilkDavetli+" "+ digerleri.join(" ");
+}
+console.log(davetEt("adem","meryem","t"))
+
+---------------------------------------------------------------
+---------------------------------------------------------------
+* Class : sınıflar,nesneler 
+
+class Ev{
+    _odaSayisi:number; 
+    _price:number;
+    _kat:number;
+    cunstructor(odaSayisi:number,price:number,kat:number)
+    this._odaSayisi=odaSayisi;
+    this._price=price;
+    this._kat=kat;
+    
+    yemekYe(){
+    console.log(this._kat+ "katlı evede yemek yenildi")
+    }
+} 
+    
+
+----------------------------------------
+inareitance : miras 
+kişi anne class / personel ve musteri çocuk klassları 
+çocuklar hem anneden func hem de kendi func tutabiliyor
+
+
+
+class kisi{
+    console.log(("kişi kaydedildi "));
+    
+    kaydet()
+
+} 
+class musteri extends kisi{
+    console.log(("satıs yapıldı kaydedildi "));
+    
+    satisYap()
+
+}  
+
+
+class personel extends kisi{
+        console.log(("maas ödendi "));
+        
+        maasOde()
+    
+ 
+} 
+
+    let personel =new personel
+    personel.kaydet()
+    personel.maasOde()
+
+    let musteri =new musteri
+    musteri.kaydet()
+    musteri.satisYap()
+
+
+
+----------------------------------------
+
+private tanımlandığı kod blogu yani class içerisinde 
+protected inharitace içerisinde erişebilmesi / daha çok abstarc sınıflarda 
+public her yerden 
+
+----------------------------------------
+property : getter - setter - encapsulation : özellikler :
+Kontrolün tekrarlanmasını önlemek için ayarlayıcıları ve ayırıcıları kullanabilirsiniz. 
+Getters ve setter bir sınıfın özelliklerine erişimi denetlemenizi sağlar.
+
+class Person {
+    private _age: number;
+    private _firstName: string;
+    private _lastName: string;
+
+ 
+    public get age() {
+        return this._age;
+    }
+
+    public set age(theAge: number) {
+        if (theAge <= 0 || theAge >= 200) {
+            throw new Error('The age is invalid');
+        }
+        this._age = theAge;
+    }
+
+    public getFullName(): string {
+        return `${this._firstName} ${this._lastName}`;
+    }
+}
+
+let person = new Person();
+person.age = 10;
+console.log(person.age);
+
+// public get age () ile yeni bir class açıp bu class public yapıyoruz ..
+ this._age = theAge; diyerek class içerisindeki _age değerini theAge olarak atıyoruz..
+artık dışarıdan 
+------------------------------------
+
+abstract sınıflar : 
+
+abstract class KrediBase{
+    constructor(){
+
+    }
+    Kaydet():void{
+    console.log("kaydedildi");
+    }
+    abstract hesapla():void;
+
+
+}
+
+
+class TuketiciKredisi extends KrediBase {
+    constructor(parametres){
+        super();
+    }
+    hesapla(): void {
+        console.log("tük kre göre hesap yapıldı ")
+    }
+}
+
+
+class mortgKred extends KrediBase {
+    constructor(parametres){
+        super();
+    }
+    hesaplama(): void {
+        console.log("mortg  kre göre hesap yapıldı ")
+    }
+}
+
+let TuketiciKredisi=new TuketiciKredisi()
+
+TuketiciKredisi.hesapla();
+TuketiciKredisi.kaydet();
+
+let mortgKred=new mortgKred
+mortgKred.hesapla();
+mortgKred.kaydet();
+
+let kredi: KrediBase
+kredi=new TuketiciKredisi()
+kredi=new mortgKred()
+
+// burada krediBase adında abstrac yani baba bir sınıf kurduk 
+altta da hem tüketici hem mortg kredileri adında çocuk sınıfları kurduk
+çocuk sınıflar babadan gelen kaydet fonk alabiliyor, 
+ayrıca abstract olarak yarım bırakılmış hesapla fonk alarak içini kendine göre değiştiriyor
+
+
+her ikisinde de kaydet ve hesapla fonk kullanabiliyoruz , burada kaydet ortak ama hesapla her kredide farklı 
+
+ayrıca let kredi: krediBase adında bir kategori oluşturup 
+kategoriye : new ile tuketicikre ve mortkredi gibi alt sınıf oluturup istediğimiz zaman bunu kullanıcı arayüzünde değiştirebiliriz
+
+
+
+
+
+
+
+
+
+
+
+
+

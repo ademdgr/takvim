@@ -1,0 +1,49 @@
+conda install -c conda-forge/label/gcc7 missingno 
+
+df.isna().sum()
+
+
+------------------------------------------------
+
+#EKSİK VERİLERİN BELİRLİ BİR SÜTÜN İÇİNDEKİ GRUPLARA GÖRE DOLDURULMASI :
+# BURADA EVENT SUTUNUNDAKİ HER BİR AYRI ETKİNLİK İÇİN AYRI AYRI HESAPLANAN ORTALAMA İÇİN O ETKİNLİKTEKİ BOŞLUKLAR DOLDURULDDU VE YAZDIRIRLDI 
+
+
+def fillna (df,nancolumn,guidecolumn):
+    uniquelist = list(df[(df[nancolumn].isna())][guidecolumn].unique())
+    print("\nCHANGE COLUMN: {}".format(nancolumn))
+    print('Unique values are: ',uniquelist)
+    for i in uniquelist:
+        summary = []
+        isnanvalues = list(df.loc[df[guidecolumn].isin([i])][nancolumn].isna().reset_index(drop=True))
+        for j in range(len(isnanvalues)):
+            if isnanvalues[j] == True:
+                pass
+            else:
+                summary.append(list(df.loc[df[guidecolumn].isin([i])][nancolumn].reset_index(drop=True))[j])
+        if len(summary) > 0:
+            changes = np.round((df[(~df[nancolumn].isna())&(df[guidecolumn]==i)][nancolumn].median(skipna=True)),2)
+            print('Unique value is {} in {} feature'.format(i,nancolumn))
+            mask = df[nancolumn].isna() & df[guidecolumn].eq(i)
+            df.loc[mask, nancolumn] = changes
+            print('Change with:',changes)
+        elif len(summary) == 0:
+            print('Unique value is {} in {} feature'.format(i,nancolumn))
+            changes = np.round((df[nancolumn].median(skipna=True)),2)
+            print('Change with:',changes)
+            mask = df[nancolumn].isna() & df[guidecolumn].eq(i)
+            df.loc[mask, nancolumn] = changes
+            
+list(df.columns[df.isnull().any()]) 
+
+# bunu kullnarak yukarıdaki kod çalışıyor ama GPU desteğiyle bile neredeyse yarım saat sürüyor
+list_of_missed_values = list(df.columns[df.isnull().any()]) 
+list_of_missed_values = ['Age', 'Height', 'Weight']
+for i in list_of_missed_values:
+    fillna (df=df, nancolumn=i,guidecolumn='Event')
+
+
+------------------------------------------------
+
+
+

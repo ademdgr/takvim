@@ -1,0 +1,247 @@
+26.03.2022 
+
+
+df.Tarih=df.Tarih.apply(pd.to_datetime)
+
+tarihi nesneden tarih tipine çevirme  : object to datetime
+
+------------------
+
+Hafta, Ay ve Yıl Bilgisini Almak
+Bu bilgilere erişmek , Pandas serisiyle kullanılan dt accessor’ı ile oldukça kolay.
+ Yılın kaçıncı haftası olduğuna erişmek için dt.week, 
+kaçıncı ay olduğuna erişmek için dt.month, 
+yıla erişmek için dt.year kullanabiliriz.
+
+çevirdikten sonra yıl ay ve haftalara ayırmak 
+
+df["week"]=df.Tarih.dt.week
+df["month"]=df.Tarih.dt.month
+df["year"]=df.Tarih.dt.year
+df.sample(10)
+
+df["day"]=df.Tarih.dt.day
+gün için
+
+
+-------------------------
+
+
+Görüldüğü gibi tüketim miktarını belirten sütunun adı, 
+miktarı gösteren sayının bizim kullandığımız formatta olması (virgül içermesi) 
+gibi bazı problemler göze çarpıyor. Ayrıca saat bilgisi de ayrı bir sütunda tutuluyor.
+ Bu sütunu daha sonra kendimiz elde edeceğimiz için şimdilik tarih sütununa ekleyebiliriz. 
+Son olarak kategorik değişken olarak görünen tarih değişkenini 
+tarih formatına çevirip saat sütununu silebiliriz. 
+Şimdi bu dediklerimizi uygulayalım.
+
+df.tuketim=df.tuketim.str.replace(".","")
+df.tuketim=df.tuketim.str.replace(",",".")
+df.tuketim=df.tuketim.astype(float)
+df["Tarih"]=df["Tarih"]+" "+df["Saat"]
+df.Tarih=df.Tarih.apply(pd.to_datetime)
+df=df.drop("Saat",axis=1)
+df.head()
+
+
+-------------------------------
+
+
+Benzer şekilde dt.quarter ile tarihin hangi üç aylık dönemde olduğu bilgisine ulaşabiliriz. 
+Aşağıdaki kod yardımıyla da hangi altı aylık dönemde olduğu bilgisine erişebiliriz.
+
+df["quarter"]=df.Tarih.dt.quarter
+df['semester'] = np.where(df['quarter'].isin([1,2]), 1, 2)
+df.sample(7)
+
+
+-Gün,Haftanın Günü ve Gün Adlarını Almak
+Bu bilgilere de daha önce yaptığımız gibi erişebiliriz. Haftanın günleri 0’dan başlayarak adlandırılır. 
+Örneğin pazartesi için 0 ve Pazar için 6 olacaktır.
+
+Python
+df["day"]=df.Tarih.dt.day
+df['daysofweek'] = df['Tarih'].dt.dayofweek
+df["day_name"]=df.Tarih.dt.day_name()
+df.sample(5)
+
+--------------------------------
+
+
+Hafta Sonu Bilgisini Almak
+Hafta sonu bilgisini almak istiyorsak “day_name” sütununu yani gün adlarının olduğu sütunu kullanabiliriz. 
+Değerimiz, gün cumartesi ya da pazar ise 1, değilse 0 olacaktır.
+
+df['is_weekend'] = np.where(df['day_name'].isin(['Sunday', 'Saturday']), 1,0)
+  
+
+İkinci bir yol olarak “daysofweek” yani haftanın günlerini belirten sütunu kullanabiliriz.
+ Bu durumda haftanın günü 5 ya da 6 ise yani 4’ten büyükse hafta sonudur.
+
+df["is_weekend"]=df["daysofweek"].apply(lambda x:1 if x>4 else 0)
+df.sample(7)
+
+
+
+-----------------------------------
+
+
+date_range() ile istediğimiz zaman aralığında zaman verisi oluşturabiliriz. 
+Örneğin 1 Ocak 2020 tarihi için saatlik veri oluşturalım. 
+Frekansı saat olarak ifade etmek için H sembolünü kullanabiliriz. 
+24 saatlik bir zaman belirlediğimiz için periods parametresi için 24 girebiliriz.
+
+Python
+data = pd.Series(pd.date_range('2020-1-1', periods=24, freq='H'))
+data = pd.DataFrame(dict(date=data))
+data.head(7) #first seven rows
+
+
+-----------------
+
+Ocak ayı için günlük veri oluşturmak istersek bunu şöyle yazabiliriz :
+
+Python
+data = pd.Series(pd.date_range('2020-1-1', periods=31, freq='D'))
+data = pd.DataFrame(dict(date=data))
+data.head(7)
+
+
+-----------------------------
+
+
+Şimdi saniyelik veri oluşturmak isteyelim.
+
+Python
+data = pd.Series(pd.date_range('2020-1-1 8:01:00', periods=10, freq='S')) 
+data = pd.DataFrame(dict(date=data))
+data
+
+
+-----------------------------
+
+
+Saat,Dakika,Saniye ve Tarih Bilgisini Almak
+Python
+data['hour'] = data['date'].dt.hour
+data['min'] = data['date'].dt.minute
+data['sec'] = data['date'].dt.second
+data["date_"]=data["date"].dt.date
+data['time'] = data['date'].dt.time
+data
+
+
+---------------------------
+
+
+resample() Fonksiyonu
+Bu fonksiyon ile zaman serisi verisinin frekansını değiştirip yeniden örnekleyebiliriz. 
+Bu fonksiyonu kullanabilmek için tarih verisini indekse atamak gerekiyor.
+
+df.head()
+
+df.index=df.Tarih
+df.drop(columns=["Tarih"],axis=1,inplace=True)
+df.head()
+
+
+Şimdi yıllık ortalama tüketime bakalım. Bunun için rule parametresini “A” olarak belirlememiz gerekiyor.
+
+df.resample(rule="A").mean()
+#df.groupby(df_new.index.year).mean()
+
+
+Her ayın başındaki ortalama tüketim miktarını görmek için şu kodu yazabiliriz:
+
+df.resample(rule="MS").mean().head(10) #first 10 rows
+
+
+
+------------------------
+
+
+shift() Fonksiyonu
+İsteğe göre bir zaman frekansı ile istenen periyoda göre değiştirme/kaydırma işlemi yapıyor. 
+Başka bir parametre girmeden periods parametresini 1 yapalım ve ne olacağına bakalım.
+
+df.shift(1).head()
+
+Görüldüğü gibi ilk değer, bir alt satıra inmiş oldu ve ilk satır NaN değerini aldı.
+
+df.shift(periods=2,freq="D").head()
+
+Yukarıdaki örnekte ise indeksler iki gün sonraki indekslerle değişmiş oldu.
+
+
+----------------------------
+
+
+
+ rolling() Fonksiyonu
+Belirlenen zaman penceresine göre kendinden önceki n tane veriyle işlem yapar. 
+Hareketli ortalama hesabı için kullanılabilir. Bunun için bir window parametresi belirlenir. 
+Örneğin, bu parametre 7 ise daha önceki 7 değerin ortalaması alınır. Ortalamaya 7. gün de dahil edilir.
+
+Python
+df.rolling(window=7).mean().head(10)
+
+#df.iloc[0:7].mean()
+
+
+
+------------
+
+
+expanding() Fonksiyonu
+Bu fonksiyon ise rolling() fonksiyonunun aksine belirlenen periyottan önceki tüm verileri işleme katar.
+
+Python
+df.expanding(min_periods=7).mean().head(10)
+
+
+-----------------------
+
+
+b tarihi ile a tarihi arasında kaç gün var 
+
+[int(i.days) for i in (df.B - df.A)]
+
+
+
+-----------------------------------
+
+
+
+from sklearn.preprocessing import LabelEncoder
+from collections import defaultdict
+
+# build dictionary function
+cols=np.array(data.columns[data.dtypes != object])
+d = defaultdict(LabelEncoder)
+
+# only for categorical columns apply dictionary by calling fit_transform 
+df_train = df_train.apply(lambda x: d[x.name].fit_transform(x))
+df_test = df_test.apply(lambda x: d[x.name].transform(x))
+df_train[cols] = data[cols]
+df_test[np.delete(cols,len(cols)-1)]=test[np.delete(cols,len(cols)-1)]
+
+
+-----------------------------
+
+
+y_predicted, y_actual = Models(GradientBoostingRegressor(random_state=21, n_estimators=3000))
+Graph_prediction(150, y_actual, y_predicted)
+
+compare = pd.DataFrame({'Prediction': y_predicted, 'Test Data' : y_actual, 'Abs error': abs(y_actual - y_predicted), 'AAD%': abs(y_actual - y_predicted)/y_actual*100})
+compare.head(10)
+
+
+-----------------------
+
+
+y_predicted, y_actual = Models(CatBoostRegressor(iterations= 10000, learning_rate= 0.02, random_state= 60))
+Graph_prediction(150, y_actual, y_predicted)
+
+----------
+
+

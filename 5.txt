@@ -1,0 +1,315 @@
+import numpy as np 
+import pandas as pd 
+import matplotlib.pyplot as plt
+import seaborn as sns  
+
+import os
+for dirname, _, filenames in os.walk('/kaggle/input'):
+    for filename in filenames:
+        print(os.path.join(dirname, filename))
+
+--------
+df = pd.read_csv('/kaggle/input/webtoon-originals-datasets/webtoon_originals_en.csv')
+df.head()
+
+
+---------
+
+df.shape
+
+# (675, 13)
+
+-----------
+#usecols = 
+# belirli kolonları başka bir veriye aktararak oradan okuduk : usecols
+
+dftwocol = pd.read_csv('/kaggle/input/webtoon-originals-datasets/webtoon_originals_en.csv', 
+                           usecols=['title','genre'])
+
+dftwocol.head()
+
+
+----------
+
+
+df.columns
+
+# Index(['title_id', 'title', 'genre', 'authors', 'weekdays', 'length',
+       'subscribers', 'rating', 'views', 'likes', 'status', 'daily_pass',
+       'synopsis'],
+      dtype='object')
+
+----------
+
+
+## Pandas ile Sütun İsimlerini Değiştirmek :
+
+# nasıl yapıyoruz : df.columns ile gelen isimleri translate edip değiştirip yeni
+#klasöre atıp onu df columns ile eşitliyoruz:
+
+dfnewcolsname= ['id', 'baslik', 'tur', 'yazarlar', 'gun', 'uzunluk',
+       'aboneler', 'değerlendirme', 'görüntülemeler', 'beğeniler', 'durum', 'günlük_geçiş',
+        'özet']
+df.columns = dfnewcolsname
+df.columns
+df.head(1)
+
+
+-----------
+
+
+# tek kodla sutun ismi değiştirmek :
+# rename
+
+df.rename(columns ={'gun':'HangiGun'},inplace=True)
+df.head(2)
+
+---------
+
+
+# Sütun Seçmek 
+
+df.id
+
+
+-----
+
+
+
+# Sütun Seçmek 
+
+df['tur']
+
+
+---------------
+
+
+# Sütun Birleştirmek 
+
+sutunbirlesik = df.HangiGun + ', ' + df.durum
+sutunbirlesik.head(5)
+
+------------------------
+
+
+# Verinin içinde ayrı bir Sütun olarak Birleştirmek :
+
+df['HangiGun+Durum'] = df.HangiGun + ', ' + df.durum
+df.head(2)
+
+
+
+-------------
+
+df.dtypes 
+
+# kolonların tiplerine bakma
+
+----------
+
+
+
+# yeni sütün ekleme / random sıfır bir arasında yeni bir df oluşturup isim veriyoruz 
+#.. sonra yeni df yi ana df ye column olarak atıyoruz 
+
+import random
+from random import randint
+sayi = []
+    
+for i in range(0,675):
+    sayi.append("{:.4f}".format(random.random()))
+      
+df['sayilari'] = sayi
+df.sayilari
+
+
+
+------------
+# başka şekli :
+
+
+import random
+from random import randint
+no2 = []
+    
+for i in range(0,675):
+    no2.append(randint(10000,200000))
+      
+df['numaralari'] = no2
+df.numaralari
+
+
+------------------
+
+# drop : sutun kaldırma 
+
+df.drop('sayilari',axis=1, inplace=True)
+df.head(2)
+
+-----------
+
+# datanın kendisi frame dir ,, column kendisi seridir 
+
+type(df)
+
+
+ --------
+
+#başlıkları / sütün isimlerini sıralama : title sort  :>> sort_values()
+
+df.columns.sort_values()
+
+---------
+
+# tersten sıralama  : sort_values  > ascending=False
+
+df.columns.sort_values(ascending=False) 
+
+
+-----------------
+
+
+df.columns.sort_values('columns')
+
+# colums eklersek hem sıralı gösteriyor  , hem hangi sıradan geldiğini 
+# sonuç : 
+
+(Index(['aboneler', 'baslik', 'beğeniler', 'değerlendirme', 'durum', 'gun',
+        'gundurum', 'görüntülemeler', 'günlük_geçiş', 'id', 'numaralari', 'tur',
+        'uzunluk', 'yazarlar', 'özet'],
+       dtype='object'),
+ array([ 6,  1,  9,  7, 10,  4, 13,  8, 11,  0, 14,  2,  5,  3, 12]))
+
+
+
+---------------------
+
+
+# datayı bir sürtüna göre sıralama  : id ye göre sıraladık 
+
+df.sort_values('id')
+
+
+------------------
+
+# iki ayrı sutuna göre sıralama 
+# önce birinci yazılan sonra ikinci yazılan 
+
+df.sort_values(['gun','değerlendirme'])
+
+
+------------------------
+
+
+# iki ayrı sutuna göre sıralama 
+# önce birinci yazılan sonra ikinci yazılan 
+# tersten sıralama yada çoktan aza sıralama  
+
+df.sort_values(['gun','değerlendirme'], ascending=False)
+
+
+---------------------
+
+
+# Filtreleme : yeni bir liste oluşturduk , iflerini verdik ve yeni sütün olarak atadık 
+
+degerkat = []
+for i in df.değerlendirme:
+    if i <= 6:
+        degerkat.append('Kötü')
+    elif i > 6 and i <=8:
+        degerkat.append('Normal')
+    else:
+        degerkat.append('Güzel')
+        
+        
+df['degerkat'] = degerkat
+df.head()
+
+
+
+-----------------------
+
+
+# tüm datanın bir sütünündaki bir değere özgü filtreleme yaptık 
+
+df[df.degerkat == 'Kötü']
+
+
+----------------
+
+# tüm datanın iki ayrı  sütünündaki bir değere özgü filtreleme yaptık 
+
+df[df.tur == 'ACTION'][df.degerkat == 'Güzel']
+
+-------------
+
+
+# sınıflandırma + ortalama 
+# bir kolondaki veriye göre sınıflandırma yapıyoruz 
+# sınıflandırdıklarımızın ortalamasını alıyoruz ve onları çoktan aza yazdırıyoruz 
+
+df.groupby('tur').değerlendirme.mean().sort_values(ascending=False)
+
+
+------------
+
+# grafik :
+
+df.groupby('tur').değerlendirme.mean().sort_values(ascending=False).plot(kind='bar')
+
+
+-------------
+# tur sütününu gruplandır
+#değerlendirmedeki sayıların ortalamasını max ve mini ve toplam kaç tane olduunu yaz 
+#çoktan aza sırala 
+
+df.groupby('tur').değerlendirme.agg(['mean','max','min','count']).sort_values('mean',ascending=False)
+
+
+---------------
+
+
+# bir sütün içindekilerini büyük harf yapma : str.upper()
+
+df['BUYUK'] = df.baslik.str.upper()
+df.BUYUK.head(5)
+
+
+# # bir sütün içindekilerini kucuk harf yapma : str.lower()
+
+df['kucuk'] = df.tur.str.lower()
+df.kucuk.head(5)
+
+
+---------------
+
+
+# bir sütün içeriğindeki belli kelime geçen satırları bulup listeleme  : str.contains()
+
+df[df.özet.str.contains('a secret')]
+
+
+---------------
+
+
+## bi̇r sütün i̇çi̇nde geçen harf yada keli̇meleri̇ bul ve deği̇şti̇r  : >>> str.replace
+# sutunda , bulup // ile değiştirecek ve  dayleri bulup . ile değiştirecek 
+# ve yeni bir sütün ismi altında yerleştirecek 
+
+df['gunDurumYeni']=df.gundurum.str.replace(',','//').str.replace('DAY','.')
+df.head(2)
+
+
+***********************************************************************
+
+
+ekler :
+
+
+
+1 * farklı kolon isim değiştirme birden fazla ...
+
+df.rename(columns={'Poster_Link' : 'Pict' ,
+                    'Series_Title': 'Name'},inplace=True)
+df.head(2)
